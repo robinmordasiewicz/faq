@@ -16,6 +16,12 @@ pipeline {
             command:
             - cat
             tty: true
+          - name: ffmpeg
+            image: jrottenberg/ffmpeg:latest
+            imagePullPolicy: Always
+            command:
+            - cat
+            tty: true
         '''
     }
   }
@@ -38,6 +44,9 @@ pipeline {
       }
       steps {
         container('imagemagick') {
+          sh 'sh intro.sh'
+        }
+        container('ffmpeg') {
           sh 'sh intro.sh'
         }
       }
