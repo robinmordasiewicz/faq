@@ -41,6 +41,7 @@ pipeline {
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
           changeset "style.conf"
+          triggeredBy cause: 'UserIdCause'
         }
       }
       steps {
