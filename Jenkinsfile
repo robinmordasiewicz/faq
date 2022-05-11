@@ -38,16 +38,17 @@ pipeline {
         anyOf {
           changeset "1920x1080-openslide.png"
           changeset "f5-logo-rgb.png"
-          changeset "intro.sh"
+          changeset "imagemagick.sh"
+          changeset "ffmpeg.sh"
           changeset "style.conf"
         }
       }
       steps {
         container('imagemagick') {
-          sh 'sh intro.sh'
+          sh 'sh imagemagick.sh'
         }
         container('ffmpeg') {
-          sh 'sh intro.sh'
+          sh 'sh ffmpeg.sh'
         }
       }
     }
