@@ -3,8 +3,8 @@
 
 title="Cloud Native Functions"
 caption="5G INFRASTRUCTURE FOUNDATIONAL TO SUCCESS"
-
-source style.conf
+INTROTITLEFONTCOLOR="#FFFFFF"
+INTROCAPTIONFONTCOLOR="#FFFFFF"
 
 convert 1920x1080-openslide.png -verbose -strip -resize 1920x1080 -quality 100 -density 72x72 -units pixelsperinch tmp.png
 
