@@ -6,7 +6,7 @@ caption="Solid color option"
 presenter="Presenter Name"
 position="Position"
 date="Date"
-BACKGROUNDCOLOR="#05335C"
+BACKGROUNDCOLOR="#0E487A"
 INTROTITLEFONTCOLOR="#FFFFFF"
 INTROCAPTIONFONTCOLOR="#FFFFFF"
 LOGO=f5-logo-white.png
@@ -33,5 +33,6 @@ convert -font Arial-Bold -pointsize 31 -fill ${INTROCAPTIONFONTCOLOR} -annotate 
 
 #convert title-caption-presenter-position-date.png ${LOGO} -gravity northeast -geometry 130x130+110+110 -composite intro.png
 convert title-caption-presenter-position-date.png ${LOGO} -gravity northwest -geometry 95x95+75+75 -composite intro.png
+convert yellow-red-orange-cyan-blue.png ${LOGO} -gravity center -geometry 380x380-0-19 -composite outro.png
 
 rm yellow.png yellow-red.png yellow-red-orange.png yellow-red-orange-cyan.png yellow-red-orange-cyan-blue.png hero-yellow-red-orange-cyan-blue.png title-caption.png title.png tmp.png title-caption-presenter.png title-caption-presenter-position.png title-caption-presenter-position-date.png
