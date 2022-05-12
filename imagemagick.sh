@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 
-title="Cloud Native Functions"
-caption="5G INFRASTRUCTURE FOUNDATIONAL TO SUCCESS"
+title="Service Proxy for Kubernetes"
+caption="Service Provider Protocols"
 INTROTITLEFONTCOLOR="#FFFFFF"
 INTROCAPTIONFONTCOLOR="#FFFFFF"
 
