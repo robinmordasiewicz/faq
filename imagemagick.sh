@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-title="Service Proxy for Kubernetes"
+title="Service Proxy for K8S"
 caption="Service Provider Protocols"
 INTROTITLEFONTCOLOR="#FFFFFF"
 INTROCAPTIONFONTCOLOR="#FFFFFF"
