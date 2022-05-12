@@ -40,7 +40,6 @@ pipeline {
           changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
-          changeset "style.conf"
           triggeredBy cause: 'UserIdCause'
         }
       }
