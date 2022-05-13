@@ -41,6 +41,7 @@ pipeline {
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
           changeset "videos.txt"
+          changeset "Jenkinsfile"
           triggeredBy cause: 'UserIdCause'
         }
       }
