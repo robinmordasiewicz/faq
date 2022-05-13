@@ -17,7 +17,7 @@ pipeline {
             - cat
             tty: true
           - name: ffmpeg
-            image: jrottenberg/ffmpeg:latest
+            image: robinhoodis/ffmpeg:latest
             imagePullPolicy: Always
             command:
             - cat
@@ -40,6 +40,7 @@ pipeline {
           changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
+          changeset "videos.txt"
           triggeredBy cause: 'UserIdCause'
         }
       }
@@ -58,6 +59,8 @@ pipeline {
         allOf {
           not {changeset "intro.png"}
           not {changeset "intro.mov"}
+          not {changeset "outro.png"}
+          not {changeset "outro.mov"}
         }
       }
       steps {
