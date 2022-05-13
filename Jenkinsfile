@@ -17,7 +17,7 @@ pipeline {
             - cat
             tty: true
           - name: ffmpeg
-            image: robinhoodis/ffmpeg:latest
+            image: jrottenberg/ffmpeg:4.4-ubuntu
             imagePullPolicy: Always
             command:
             - cat
