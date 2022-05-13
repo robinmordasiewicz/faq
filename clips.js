@@ -5,7 +5,7 @@ concat({
     'intro.mov',
     'clip1.mov',
     'intro.mov',
-    'outro.mp4'
+    'outro.mov'
   ],
   transitions: [
     {
