@@ -8,5 +8,6 @@ ffmpeg -y -framerate .5 -i outro.png -c:v libx264 -pix_fmt yuv420p -r 29.01 outr
 
 #ffmpeg-concat -t circleopen -d 750 -o output2.mov intro.mov outro.mov
 
-ffmpeg -y -i intro.mov -i outro.mov -filter_complex xfade=transition=fade:duration=1:offset=1 -pix_fmt yuv420p outputVideo.mov
+ffmpeg -y -i intro.mov -i outro.mov -filter_complex "[0][1]xfade=transition=fade:duration=1:offset=1,format=yuv420p" -pix_fmt yuv420p outputVideo.mov
+
 
