@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt root="." title="Shotcut version 20.02.17" version="6.20.0" producer="main_bin" LC_NUMERIC="C">
+  <profile colorspace="709" description="PAL 4:3 DV or DVD" frame_rate_num="30000" frame_rate_den="1001" width="1920" sample_aspect_num="1" height="1080" sample_aspect_den="1" display_aspect_num="16" progressive="1" display_aspect_den="9"/>
+  <consumer g="150" channels="1" rescale="bicubic" mlt_service="avformat" real_time="-4" acodec="aac" ab="192k" deinterlace_method="yadif" top_field_first="2" f="mp4" threads="0" preset="fast" bf="3" target="intro.mp4" vcodec="libx264" movflags="+faststart" crf="0" ar="48000"/>
+  <playlist autoclose="1" id="main_bin">
+    <property name="xml_retain">1</property>
+  </playlist>
+  <producer in="00:00:00.000" id="black" out="00:00:13.413">
+    <property name="length">00:00:13.447</property>
+    <property name="eof">pause</property>
+    <property name="resource">0</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="mlt_image_format">rgb24a</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist autoclose="1" id="background">
+    <entry in="00:00:00.000" producer="black" out="00:00:13.413"/>
+  </playlist>
+  <producer title="Anonymous Submission" in="00:00:00.000" id="producer1" out="00:00:14.915">
+    <property name="length">00:00:14.948</property>
+    <property name="eof">pause</property>
+    <property name="resource">clip1.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2022-05-13T17:51:03</property>
+    <property name="shotcut:hash">2a03514e8f0be6175b355e4cb59b08a8</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">clip1.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist autoclose="1" id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <blank length="00:00:00.734"/>
+    <entry in="00:00:03.604" producer="producer1" out="00:00:14.081"/>
+  </playlist>
+  <producer title="Anonymous Submission" in="00:00:00.000" id="producer0" out="03:59:59.993">
+    <property name="length">03:59:60.027</property>
+    <property name="eof">pause</property>
+    <property name="resource">intro.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2022-05-14T03:22:51</property>
+    <property name="shotcut:caption">intro.png</property>
+    <property name="shotcut:detail">intro.png</property>
+    <property name="shotcut:hash">e51aff2ff52e0f02c0e688b688acb79f</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer title="Anonymous Submission" in="00:00:00.000" id="producer2" out="03:59:59.993">
+    <property name="length">03:59:60.027</property>
+    <property name="eof">pause</property>
+    <property name="resource">outro.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2022-05-14T03:22:51</property>
+    <property name="shotcut:caption">outro.png</property>
+    <property name="shotcut:detail">outro.png</property>
+    <property name="shotcut:hash">58a9b9a14123cf3dc3829fcf294c23ac</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist autoclose="1" id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V2</property>
+    <entry in="00:00:00.000" producer="producer0" out="00:00:02.269"/>
+    <blank length="00:00:07.975"/>
+    <entry in="00:00:00.834" producer="producer2" out="00:00:03.971"/>
+  </playlist>
+  <tractor global_feed="1" title="Shotcut version 20.02.17" in="00:00:00.000" id="tractor2" out="00:00:13.413">
+    <property name="shotcut">1</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">1</property>
+    <property name="shotcut:trackHeight">30</property>
+    <track producer="background"/>
+    <track producer="playlist0"/>
+    <track producer="playlist1"/>
+    <transition id="transition4">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0.9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">0</property>
+    </transition>
+  </tractor>
+</mlt>
+

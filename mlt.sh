@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-melt intro.mlt -consumer avformat:intro.mp4 f=mp4 s=1920x1080 pix_fmt=yuv420p r=29.97
+melt intro.mlt -consumer avformat:intro.mp4 f=mp4 s=1920x1080 pix_fmt=yuv420p r=29.97 use_wallclock_as_timestamps=1 enc_time_base=-1
 
 #melt intro.mlt -consumer avformat:output.mov f=mov acodec=pcm_s16le vcodec=libxvid s=1920x1080 b=6000k pix_fmt=uyvy422 vtag=yuvs acodec=pcm_s16le
 
