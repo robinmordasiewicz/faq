@@ -16,6 +16,12 @@ pipeline {
             command:
             - cat
             tty: true
+          - name: mlt
+            image: robinhoodis/mlt:latest
+            imagePullPolicy: Always
+            command:
+            - cat
+            tty: true
           - name: ffmpeg
             image: robinhoodis/ffmpeg:latest
             imagePullPolicy: Always
@@ -40,6 +46,7 @@ pipeline {
           changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
+          changeset "mlt.sh"
           changeset "videos.txt"
           changeset "Jenkinsfile"
           triggeredBy cause: 'UserIdCause'
@@ -52,6 +59,9 @@ pipeline {
         container('ffmpeg') {
           sh 'sh ffmpeg.sh'
         }
+        container('mlt') {
+          sh 'sh mlt.sh'
+        }
       }
     }
     stage('Commit New Assets') {
@@ -63,6 +73,7 @@ pipeline {
           not {changeset "outro.png"}
           not {changeset "outro.mov"}
           not {changeset "output.mov"}
+          not {changeset "output-mlt.mov"}
         }
       }
       steps {
