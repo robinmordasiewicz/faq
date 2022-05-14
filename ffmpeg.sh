@@ -1,15 +1,16 @@
 #!/bin/bash
 #
 
-ffmpeg -y -framerate .5 -i intro.png -c:v prores_ks -profile:v 2 -vendor apl0 -bits_per_mb 8000 -pix_fmt yuv422p10le -r 29.97 -s 1920x1080 -video_track_timescale 30000 intro.mov
-ffmpeg -y -i intro.mov -c copy -bsf:v prores_metadata=color_primaries=bt709:color_trc=bt709:colorspace=bt709 intro1.mov
-mv intro1.mov intro.mov
+#ffmpeg -y -framerate .5 -i intro.png -c:v prores_ks -profile:v 2 -vendor apl0 -bits_per_mb 8000 -pix_fmt yuv422p10le -r 29.97 -s 1920x1080 -video_track_timescale 30000 intro.mov
+#ffmpeg -y -i intro.mov -c copy -bsf:v prores_metadata=color_primaries=bt709:color_trc=bt709:colorspace=bt709 intro1.mov
+#mv intro1.mov intro.mov
+
+ffmpeg -y -framerate .5 -i intro.png -c:v h265 -pix_fmt yuv422p10le -r 29.97 -s 1920x1080 -video_track_timescale 30000 intro.mp4
+exit 0
 
 ffmpeg -y -framerate .5 -i outro.png -c:v prores_ks -profile:v 2 -vendor apl0 -bits_per_mb 8000 -pix_fmt yuv422p10le -r 29.97 -s 1920x1080 -video_track_timescale 30000 outro.mov
 ffmpeg -y -i outro.mov -c copy -bsf:v prores_metadata=color_primaries=bt709:color_trc=bt709:colorspace=bt709 outro1.mov
 mv outro1.mov outro.mov
-
-node clips.js
 
 exit 0
 #ffmpeg -y -f concat -safe 0 -i videos.txt -filter_complex "gltransition=duration=4:offset=1.5" -pix_fmt yuv420p -c copy output.mov

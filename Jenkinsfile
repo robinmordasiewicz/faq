@@ -56,9 +56,6 @@ pipeline {
         container('imagemagick') {
           sh 'sh imagemagick.sh'
         }
-        container('ffmpeg') {
-          sh 'sh ffmpeg.sh'
-        }
         container('mlt') {
           sh 'sh mlt.sh'
         }
