@@ -66,11 +66,11 @@ pipeline {
         beforeAgent true
         allOf {
           not {changeset "intro.png"}
-          not {changeset "intro.mov"}
+          not {changeset "intro.mp4"}
           not {changeset "outro.png"}
-          not {changeset "outro.mov"}
-          not {changeset "output.mov"}
-          not {changeset "output-mlt.mov"}
+          not {changeset "outro.mp4"}
+          not {changeset "output.mp4"}
+          not {changeset "output-mlt.mp4"}
         }
       }
       steps {
