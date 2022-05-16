@@ -58,7 +58,7 @@ pipeline {
           sh 'sh imagemagick.sh'
         }
         container('mlt') {
-          sh 'sh mlt.sh'
+          sh 'ls -al'
         }
       }
     }
