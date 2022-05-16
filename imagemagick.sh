@@ -5,7 +5,7 @@ title="Title layout:"
 caption="Solid color option"
 presenter="Presenter Name"
 position="Position"
-date="`date +"%b, %d %Y %H%M%S"`"
+date=`TZ='America/Toronto' date +"%a %b %d, %Y - %H:%M:%S %Z"`
 BACKGROUNDCOLOR="#0E487A"
 INTROTITLEFONTCOLOR="#FFFFFF"
 INTROCAPTIONFONTCOLOR="#FFFFFF"
