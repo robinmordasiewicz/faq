@@ -69,9 +69,6 @@ pipeline {
           not {changeset "intro.png"}
           not {changeset "intro.mp4"}
           not {changeset "outro.png"}
-          not {changeset "outro.mp4"}
-          not {changeset "output.mp4"}
-          not {changeset "output-mlt.mp4"}
         }
       }
       steps {
