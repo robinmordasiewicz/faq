@@ -11,7 +11,7 @@ pipeline {
         spec:
           containers:
           - name: marp
-            image: marpteam/marp-cli:latest
+            image: robinhoodis/marp:latest
             imagePullPolicy: Always
             command:
             - cat
