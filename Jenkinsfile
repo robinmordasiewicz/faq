@@ -10,6 +10,12 @@ pipeline {
         kind: Pod
         spec:
           containers:
+          - name: marp
+            image: marpteam/marp-cli:latest
+            imagePullPolicy: Always
+            command:
+            - cat
+            tty: true
           - name: imagemagick
             image: robinhoodis/imagemagick:latest
             imagePullPolicy: Always
