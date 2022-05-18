@@ -65,6 +65,9 @@ pipeline {
         container('mlt') {
           sh 'sh mlt.sh'
         }
+        container('marp') {
+          sh 'sh marp.sh'
+        }
       }
     }
     stage('Commit New Assets') {
