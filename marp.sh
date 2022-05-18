@@ -6,4 +6,4 @@
 #find / | grep marp
 #marp-cli intro.md --pptx
 find / -name marp
-intro.md --pptx
+/home/marp/.cli/docker-entrypoint intro.md --pptx
