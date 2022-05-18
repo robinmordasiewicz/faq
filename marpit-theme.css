@@ -1,0 +1,39 @@
+/* @theme marpit-theme */
+
+section {
+  width: 1920px;
+  height: 1080px;
+  font-size: 140px;
+  padding: 140px;
+  background: #FF00FF;
+}
+
+h1 {
+  font-size: 60px;
+  color: #09c;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+section {
+  padding: 50px;
+}
+
+header,
+footer {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  height: 20px;
+}
+
+header {
+  top: 300px;
+}
+
+footer {
+  bottom: 300px;
+}
+
