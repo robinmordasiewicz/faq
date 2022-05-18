@@ -1,12 +1,11 @@
 ---
 theme: gaia
 _class: lead
+title: Markdow presentatioin
+description: An example slide deck created using Marpit
 paginate: true
-backgroundColor: #fff
-backgroundImage: url('https://marp.app/assets/hero-background.svg')
+marp: true
 ---
-
-![bg left:40% 80%](https://marp.app/assets/marp.svg)
 
 # **Marp**
 
@@ -16,18 +15,7 @@ https://marp.app/
 
 ---
 
-# How to write cool
+# How to write cool presentations
 
-Split pages by horizontal ruler (`---`). It's very simple! :satisfied:
+Agenda Slide
 
-```markdown
-# Slide 1
-
-foobar
-
----
-
-# Slide 2
-
-foobar
-```
