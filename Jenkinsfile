@@ -53,7 +53,9 @@ pipeline {
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
           changeset "mlt.sh"
+          changeset "marp.sh"
           changeset "intro.mlt"
+          changeset "intro.md"
           changeset "Jenkinsfile"
           triggeredBy cause: 'UserIdCause'
         }
@@ -76,7 +78,7 @@ pipeline {
         allOf {
           not {changeset "intro.png"}
           not {changeset "intro.mp4"}
-          not {changeset "outro.png"}
+          not {changeset "intro.pptx"}
         }
       }
       steps {
