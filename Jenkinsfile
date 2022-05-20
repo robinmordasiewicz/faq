@@ -10,7 +10,7 @@ pipeline {
         kind: Pod
         spec:
           containers:
-          - name: mermaid
+          - name: mermaid-cli
             image: minlag/mermaid-cli:latest
             imagePullPolicy: Always
             command:
@@ -75,6 +75,9 @@ pipeline {
         }
         container('marp') {
           sh 'sh marp.sh'
+        }
+        container('mermaid-cli') {
+          sh 'sh mermaid-cli.sh'
         }
       }
     }
