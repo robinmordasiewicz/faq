@@ -1,24 +1,38 @@
 ---
-style: marpit-theme.css
-title: Markdown presentatioin
-description: An example slide deck created using Marpit
+author: Robin Mordasiewicz
+title: Template Slide Deck
+description: Template Powerpoint slides
 paginate: true
 marp: true
-header: 'Header content'
-footer: 'Footer content'
 ---
 
-# Slide 1
+<!-- _class: logo -->
 
-* Item 1
-* item 2
-* Item 3
+![width:32px height:32px](f5-logo-white.png)
+
+![width:32px height:32px](f5-logo-rgb.png)
+
+![bg opacity](https://yhatt-marp-cli-example.netlify.com/assets/gradient.jpg)
+
+<!-- _class: title -->
+
+# Title layout:<br>Solid Color Option
+
+<!-- _class: presentername -->
+
+### Presenter Name
+
+<!-- _class: position -->
+
+#### Position
+
+<!-- _class: date -->
+
+### Date
 
 ---
 
 # Slide 2
-
-## Subtitle
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

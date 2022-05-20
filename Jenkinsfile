@@ -10,6 +10,12 @@ pipeline {
         kind: Pod
         spec:
           containers:
+          - name: mermaid
+            image: minlag/mermaid-cli:latest
+            imagePullPolicy: Always
+            command:
+            - cat
+            tty: true
           - name: marp
             image: robinhoodis/marp:latest
             imagePullPolicy: Always

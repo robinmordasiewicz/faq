@@ -1,0 +1,41 @@
+/* @theme marp-theme */
+
+@import 'default';
+
+section {
+  text-align: left;
+  width: 1920px;
+  height: 1080px;
+}
+
+section.title {
+  background: #0E487A;
+  font-family: “Arial Bold”, sans-serif;
+  color: #FFFFFF;
+}
+
+section.date {
+  background: #0E487A;
+  font-family: “Arial Bold”, sans-serif;
+  color: #FFFFFF;
+}
+section.position {
+  background: #0E487A;
+  font-family: “Arial Bold”, sans-serif;
+  color: #FFFFFF;
+}
+section.presentername {
+  background: #0E487A;
+  font-family: “Arial Bold”, sans-serif;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-size: 96px;
+  color: #FFFFFF;
+}
+
+h2 {
+  color: #FFFFFF;
+  font-size: 72px;
+}

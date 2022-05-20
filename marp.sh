@@ -2,7 +2,8 @@
 #
 
 if test -f "/home/marp/.cli/docker-entrypoint"; then
-    /home/marp/.cli/docker-entrypoint intro.md --pptx
+    /home/marp/.cli/docker-entrypoint intro.md --theme marp-theme.css --allow-local-files --html
 else
-    marp intro.md --pptx
+    marp intro.md --theme marp-theme.css --allow-local-files --html
 fi
+
