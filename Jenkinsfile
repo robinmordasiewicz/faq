@@ -60,6 +60,8 @@ pipeline {
           changeset "ffmpeg.sh"
           changeset "mlt.sh"
           changeset "marp.sh"
+          changeset "mermaid.sh"
+          changeset "diagram.png"
           changeset "intro.mlt"
           changeset "intro.md"
           changeset "Jenkinsfile"
@@ -88,6 +90,7 @@ pipeline {
           not {changeset "intro.png"}
           not {changeset "intro.mp4"}
           not {changeset "intro.pptx"}
+          not {changeset "diagram.png"}
         }
       }
       steps {
