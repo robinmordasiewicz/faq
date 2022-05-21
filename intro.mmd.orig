@@ -1,0 +1,24 @@
+graph LR;
+ diameter([Diameter - TCP/SCTP])-->serviceproxy[Service Proxy];
+ client([SIP - TCP/UDP])-->serviceproxy[Service Proxy];
+ http([HTTP/2 - TCP])-->serviceproxy[Service Proxy];
+ subgraph BIG-IP NEXT
+  serviceproxy-->pod1[Pod 1];
+  serviceproxy-->pod2[Pod 2];
+  serviceproxy-->pod3[Pod 3];
+ end
+ subgraph K8S
+  pod1[Pod 1];
+  pod2[Pod 2];
+  pod3[Pod 3];
+ end
+
+graph TD;
+    a --> A
+    A --> B
+    B --> C
+
+    subgraph one
+        A
+        C
+    end
