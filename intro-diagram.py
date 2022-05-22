@@ -11,7 +11,7 @@ from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Ing
 
 with Diagram(name="Intro Diagram", show=False):
-    ingress = Ing("ingress")
+    ingress = Ing("")
 
     servicemesh = Prometheus("Service Mesh")
     servicemesh << Edge(color="firebrick", style="dashed") << Grafana("monitoring")
@@ -47,15 +47,3 @@ with Diagram(name="Intro Diagram", show=False):
             << servicemesh
         grpcsvc >> Edge(color="black") >> primary
 
-    aggregator = Fluentd("logging")
-    aggregator \
-        >> Edge(label="parse") \
-        >> Kafka("stream") \
-        >> Edge(color="black", style="bold") \
-        >> Spark("analytics")
-
-    ingress \
-        >> Edge(color="darkgreen") \
-        << grpcsvc \
-        >> Edge(color="darkorange") \
-        >> aggregator
