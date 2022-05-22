@@ -8,7 +8,7 @@ from diagrams.onprem.monitoring import Grafana, Prometheus
 from diagrams.onprem.network import Nginx
 from diagrams.onprem.queue import Kafka
 
-with Diagram(name="intro-diagram", show=False):
+with Diagram(name="Intro Diagram", show=False):
     ingress = Nginx("ingress")
 
     metrics = Prometheus("metric")
@@ -18,7 +18,7 @@ with Diagram(name="intro-diagram", show=False):
         grpcsvc = [
             Server("grpc1")]
 
-    with Cluster("Sessions HA"):
+    with Cluster("Diameter"):
         primary = Redis("session")
         primary \
             - Edge(color="brown", style="dashed") \
@@ -27,7 +27,16 @@ with Diagram(name="intro-diagram", show=False):
             << metrics
         grpcsvc >> Edge(color="brown") >> primary
 
-    with Cluster("Database HA"):
+    with Cluster("SIP"):
+        primary = Redis("session")
+        primary \
+            - Edge(color="brown", style="dashed") \
+            - Redis("replica") \
+            << Edge(label="collect") \
+            << metrics
+        grpcsvc >> Edge(color="brown") >> primary
+
+    with Cluster("HTTP/2"):
         primary = PostgreSQL("users")
         primary \
             - Edge(color="brown", style="dotted") \
