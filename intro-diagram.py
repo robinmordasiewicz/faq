@@ -14,9 +14,7 @@ from diagrams.generic.device import Mobile
 
 with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR"):
 
-    protocoldiameter = Mobile("Diameter")
-    protocolsip = Mobile("SIP")
-    protocolhttp2 = Mobile("HTTP/2")
+    userequipment = Mobile("Subscribers")
 
     servicemesh = Istio("Service Mesh")
 
