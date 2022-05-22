@@ -23,37 +23,37 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
     spk = Nginx("Service Proxy")
 
     userequipment - spk
-    userequipment - spk
-    userequipment - spk
 
     with Cluster("BIG-IP NEXT"):
-        spk - 
+        spk - diameter
+        spk - sip
+        spk - http2
 
     with Cluster("Diameter"):
-        primary = Pod("")
-        primary \
+        diameter = Pod("")
+        diameter \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
             - Edge(label="") \
             - servicemesh
-        spk - Edge(color="brown") - primary
+        spk - Edge(color="brown") - diameter
 
     with Cluster("SIP"):
-        primary = Pod("")
-        primary \
+        sip = Pod("")
+        sip \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
             - Edge(label="") \
             - servicemesh
-        spk - Edge(color="brown") - primary
+        spk - Edge(color="brown") - sip
 
     with Cluster("HTTP/2"):
-        primary = Pod("")
-        primary \
+        http2 = Pod("")
+        http2 \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
             - Edge(label="") \
             - servicemesh
-        spk - Edge(color="black") - primary
+        spk - Edge(color="black") - http2
 
     servicemesh = Istio("Service Mesh")
