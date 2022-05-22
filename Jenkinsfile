@@ -83,9 +83,6 @@ pipeline {
         container('mlt') {
           sh 'sh mlt.sh'
         }
-        container('marp') {
-          sh 'sh marp.sh'
-        }
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
         }
