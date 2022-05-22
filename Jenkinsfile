@@ -10,6 +10,12 @@ pipeline {
         kind: Pod
         spec:
           containers:
+          - name: diagrams
+            image: robinhoodis/diagrams:latest
+            imagePullPolicy: Always
+            command:
+            - cat
+            tty: true
           - name: mermaid-cli
             image: minlag/mermaid-cli:latest
             imagePullPolicy: Always
@@ -59,12 +65,14 @@ pipeline {
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
           changeset "mlt.sh"
+          changeset "diagram.sh"
           changeset "marp.sh"
           changeset "mermaid.sh"
           changeset "diagram.png"
           changeset "intro.mlt"
           changeset "intro.md"
           changeset "Jenkinsfile"
+          changeset "intro-diagram.py"
           triggeredBy cause: 'UserIdCause'
         }
       }
@@ -80,6 +88,9 @@ pipeline {
         }
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
+        }
+        container('diagrams') {
+          sh 'sh diagrams.sh'
         }
       }
     }
