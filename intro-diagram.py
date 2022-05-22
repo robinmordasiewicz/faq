@@ -12,14 +12,12 @@ from diagrams.k8s.network import Ing
 from diagrams.onprem.network import Istio
 
 with Diagram(name="BIG-IP NEXT - Service Proxy for Kubernetes", show=False):
-    ingress = Ing("")
 
     servicemesh = Istio("Service Mesh")
-    servicemesh << Edge(color="firebrick", style="dashed") << Grafana("monitoring")
 
     with Cluster("BIG-IP NEXT"):
-        grpcsvc = [
-            Server("Service Proxy")]
+        spk = [
+            Ing("Service Proxy")]
 
     with Cluster("Diameter"):
         primary = Pod("")
@@ -28,7 +26,7 @@ with Diagram(name="BIG-IP NEXT - Service Proxy for Kubernetes", show=False):
             - Pod("") \
             << Edge(label="") \
             << servicemesh
-        grpcsvc >> Edge(color="brown") >> primary
+        spk >> Edge(color="brown") >> primary
 
     with Cluster("SIP"):
         primary = Pod("")
@@ -37,7 +35,7 @@ with Diagram(name="BIG-IP NEXT - Service Proxy for Kubernetes", show=False):
             - Pod("") \
             << Edge(label="") \
             << servicemesh
-        grpcsvc >> Edge(color="brown") >> primary
+        spk >> Edge(color="brown") >> primary
 
     with Cluster("HTTP/2"):
         primary = Pod("")
@@ -46,5 +44,5 @@ with Diagram(name="BIG-IP NEXT - Service Proxy for Kubernetes", show=False):
             - Pod("") \
             << Edge(label="") \
             << servicemesh
-        grpcsvc >> Edge(color="black") >> primary
+        spk >> Edge(color="black") >> primary
 
