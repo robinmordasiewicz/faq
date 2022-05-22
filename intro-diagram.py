@@ -14,12 +14,12 @@ from diagrams.generic.device import Mobile
 
 with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR"):
 
-   userequipment = Mobile("Subscribers")
-   spk = Ing("Service Proxy")
-   primary = Pod("")
-   userequipment - spk
-
+    userequipment = Mobile("Subscribers")
+    spk = Ing("Service Proxy")
+    primary = Pod("")
     servicemesh = Istio("Service Mesh")
+
+    userequipment - spk
 
     with Cluster("BIG-IP NEXT"):
         spk
