@@ -19,28 +19,28 @@ with Diagram(name="Intro Diagram", show=False):
             Server("grpc1")]
 
     with Cluster("Diameter"):
-        primary = Redis("session")
+        primary = Redis("Pod1")
         primary \
             - Edge(color="brown", style="dashed") \
-            - Redis("replica") \
+            - Redis("Pod2") \
             << Edge(label="collect") \
             << metrics
         grpcsvc >> Edge(color="brown") >> primary
 
     with Cluster("SIP"):
-        primary = Redis("session")
+        primary = Redis("Pod3")
         primary \
             - Edge(color="brown", style="dashed") \
-            - Redis("replica") \
+            - Redis("Pod4") \
             << Edge(label="collect") \
             << metrics
         grpcsvc >> Edge(color="brown") >> primary
 
     with Cluster("HTTP/2"):
-        primary = PostgreSQL("users")
+        primary = PostgreSQL("Pod5")
         primary \
             - Edge(color="brown", style="dotted") \
-            - PostgreSQL("replica") \
+            - PostgreSQL("Pod6") \
             << Edge(label="collect") \
             << metrics
         grpcsvc >> Edge(color="black") >> primary
