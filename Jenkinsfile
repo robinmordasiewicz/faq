@@ -80,15 +80,6 @@ pipeline {
         container('diagrams') {
           sh 'sh diagrams.sh'
         }
-        container('imagemagick') {
-          sh 'sh imagemagick.sh'
-        }
-        container('mlt') {
-          sh 'sh mlt.sh'
-        }
-        container('mermaid-cli') {
-          sh 'sh mermaid-cli.sh'
-        }
       }
     }
     stage('Commit New Assets') {
