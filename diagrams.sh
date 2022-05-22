@@ -1,4 +1,4 @@
 #!/bin/bash
 #
 
-python intro-diagram.py
+python3 intro-diagram.py
