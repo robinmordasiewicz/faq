@@ -7,7 +7,7 @@ from diagrams.onprem.network import Nginx
 
 with Diagram("Cluster nesting", show=False):
 
-    f5_lb = LoadBalancing("BIG-IP LB")
+    sipprotocol = LoadBalancing("SIP")
 
     with Cluster("Kubernetes"):
 
@@ -22,5 +22,5 @@ with Diagram("Cluster nesting", show=False):
         with Cluster("MySQL"):
             myapp_db = Pod("myapp-db")
 
-    f5_lb >> Edge(headport="c", tailport="c", minlen="1", lhead='cluster_Kubernetes') >> nginx
+    sipprotocol >> Edge(headport="c", tailport="c", minlen="1", lhead='cluster_Kubernetes') >> nginx
     nginx >> Edge(headport="c", tailport="c", minlen="1", lhead='cluster_MyApp') >> myapp_ing >> Edge(headport="c", tailport="c", minlen="1", lhead='cluster_MyApp pods') >> myapp_pods >> myapp_db
