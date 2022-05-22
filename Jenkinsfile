@@ -65,7 +65,7 @@ pipeline {
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
           changeset "mlt.sh"
-          changeset "diagram.sh"
+          changeset "diagrams.sh"
           changeset "marp.sh"
           changeset "mermaid.sh"
           changeset "diagram.png"
