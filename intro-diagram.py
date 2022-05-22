@@ -14,16 +14,17 @@ from diagrams.generic.device import Mobile
 
 with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR"):
 
-    userequipment = Mobile("Subscribers")
+   userequipment = Mobile("Subscribers")
+   spk = Ing("Service Proxy")
+   primary = Pod("")
+   userequipment - spk
 
     servicemesh = Istio("Service Mesh")
 
     with Cluster("BIG-IP NEXT"):
-        spk = [
-            Ing("Service Proxy")]
+        spk
 
     with Cluster("Diameter"):
-        primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
@@ -32,7 +33,6 @@ with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction=
         spk - Edge(color="brown") - primary
 
     with Cluster("SIP"):
-        primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
@@ -41,7 +41,6 @@ with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction=
         spk - Edge(color="brown") - primary
 
     with Cluster("HTTP/2"):
-        primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
