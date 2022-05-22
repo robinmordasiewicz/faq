@@ -21,16 +21,19 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
 
     userequipment = Mobile("Subscribers")
     spk = Nginx("Service Proxy")
+    
 
     userequipment - spk
 
     with Cluster("BIG-IP NEXT"):
+        diameter = Pod("")
         spk - diameter
+        sip = Pod("")
         spk - sip
+        http2 = Pod("")
         spk - http2
 
     with Cluster("Diameter"):
-        diameter = Pod("")
         diameter \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
@@ -39,7 +42,6 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
         spk - Edge(color="brown") - diameter
 
     with Cluster("SIP"):
-        sip = Pod("")
         sip \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
@@ -48,7 +50,6 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
         spk - Edge(color="brown") - sip
 
     with Cluster("HTTP/2"):
-        http2 = Pod("")
         http2 \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
