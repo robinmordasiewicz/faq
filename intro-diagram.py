@@ -33,28 +33,28 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
         spk - sip
         http2 = Pod("")
         spk - http2
+    with Cluster("Kubernetes"):
+        with Cluster("Diameter"):
+            diameter \
+                - Edge(color="brown", style="dotted") \
+                - Pod("") \
+                - Edge(label="") \
+                - servicemesh
+            spk - Edge(color="brown") - diameter
 
-    with Cluster("Diameter"):
-        diameter \
-            - Edge(color="brown", style="dotted") \
-            - Pod("") \
-            - Edge(label="") \
-            - servicemesh
-        spk - Edge(color="brown") - diameter
+        with Cluster("SIP"):
+            sip \
+                - Edge(color="brown", style="dotted") \
+                - Pod("") \
+                - Edge(label="") \
+                - servicemesh
+            spk - Edge(color="brown") - sip
 
-    with Cluster("SIP"):
-        sip \
-            - Edge(color="brown", style="dotted") \
-            - Pod("") \
-            - Edge(label="") \
-            - servicemesh
-        spk - Edge(color="brown") - sip
-
-    with Cluster("HTTP/2"):
-        http2 \
-            - Edge(color="brown", style="dotted") \
-            - Pod("") \
-            - Edge(label="") \
-            - servicemesh
-        spk - Edge(color="black") - http2
+        with Cluster("HTTP/2"):
+            http2 \
+                - Edge(color="brown", style="dotted") \
+                - Pod("") \
+                - Edge(label="") \
+                - servicemesh
+            spk - Edge(color="black") - http2
 
