@@ -11,10 +11,10 @@ from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Ing
 from diagrams.onprem.network import Istio
 
-with Diagram(name="Intro Diagram", show=False):
-    ingress = Istio("")
+with Diagram(name="BIG-IP NEXT - Service Proxy for Kubernetes", show=False):
+    ingress = Ing("")
 
-    servicemesh = Prometheus("Service Mesh")
+    servicemesh = Istio("Service Mesh")
     servicemesh << Edge(color="firebrick", style="dashed") << Grafana("monitoring")
 
     with Cluster("BIG-IP NEXT"):
