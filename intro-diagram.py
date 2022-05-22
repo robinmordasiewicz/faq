@@ -13,23 +13,24 @@ from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
 
 graph_attr = {
-    "fontsize": "45",
+    "fontsize": "28",
     "bgcolor": "transparent"
 }
 
-with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
+with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
 
     userequipment = Mobile("Subscribers")
-    spk = Ing("Service Proxy")
-    primary = Pod("")
-    servicemesh = Istio("Service Mesh")
+    spk = Nginx("Service Proxy")
 
+    userequipment - spk
+    userequipment - spk
     userequipment - spk
 
     with Cluster("BIG-IP NEXT"):
-        spk
+        spk - 
 
     with Cluster("Diameter"):
+        primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
@@ -38,6 +39,7 @@ with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction=
         spk - Edge(color="brown") - primary
 
     with Cluster("SIP"):
+        primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
@@ -46,6 +48,7 @@ with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction=
         spk - Edge(color="brown") - primary
 
     with Cluster("HTTP/2"):
+        primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
@@ -53,3 +56,4 @@ with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction=
             - servicemesh
         spk - Edge(color="black") - primary
 
+    servicemesh = Istio("Service Mesh")
