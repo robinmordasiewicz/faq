@@ -1,26 +1,52 @@
-# diagram.py
-from diagrams import Cluster, Diagram, Node, Edge
-from diagrams.k8s.compute import Pod
-from diagrams.k8s.network import Ing
-from diagrams.gcp.network import LoadBalancing
+from diagrams import Cluster, Diagram, Edge
+from diagrams.onprem.analytics import Spark
+from diagrams.onprem.compute import Server
+from diagrams.onprem.database import PostgreSQL
+from diagrams.onprem.inmemory import Redis
+from diagrams.onprem.aggregator import Fluentd
+from diagrams.onprem.monitoring import Grafana, Prometheus
 from diagrams.onprem.network import Nginx
+from diagrams.onprem.queue import Kafka
 
-with Diagram("Cluster nesting", show=False):
+with Diagram(name="Advanced Web Service with On-Premise (colored)", show=False):
+    ingress = Nginx("ingress")
 
-    sipprotocol = LoadBalancing("SIP")
+    metrics = Prometheus("metric")
+    metrics << Edge(color="firebrick", style="dashed") << Grafana("monitoring")
 
-    with Cluster("Kubernetes"):
+    with Cluster("Service Cluster"):
+        grpcsvc = [
+            Server("grpc1"),
+            Server("grpc2"),
+            Server("grpc3")]
 
-        with Cluster("Nginx"):
-            nginx= Nginx("")
+    with Cluster("Sessions HA"):
+        primary = Redis("session")
+        primary \
+            - Edge(color="brown", style="dashed") \
+            - Redis("replica") \
+            << Edge(label="collect") \
+            << metrics
+        grpcsvc >> Edge(color="brown") >> primary
 
-        with Cluster("MyApp"):
-            myapp_ing = Ing("")
-            with Cluster("Pods"):
-                myapp_pods = Pod("myapp")
+    with Cluster("Database HA"):
+        primary = PostgreSQL("users")
+        primary \
+            - Edge(color="brown", style="dotted") \
+            - PostgreSQL("replica") \
+            << Edge(label="collect") \
+            << metrics
+        grpcsvc >> Edge(color="black") >> primary
 
-        with Cluster("MySQL"):
-            myapp_db = Pod("myapp-db")
+    aggregator = Fluentd("logging")
+    aggregator \
+        >> Edge(label="parse") \
+        >> Kafka("stream") \
+        >> Edge(color="black", style="bold") \
+        >> Spark("analytics")
 
-    sipprotocol >> Edge(headport="c", tailport="c", minlen="1", lhead='cluster_Kubernetes') >> nginx
-    nginx >> Edge(headport="c", tailport="c", minlen="1", lhead='cluster_MyApp') >> myapp_ing >> Edge(headport="c", tailport="c", minlen="1", lhead='cluster_MyApp pods') >> myapp_pods >> myapp_db
+    ingress \
+        >> Edge(color="darkgreen") \
+        << grpcsvc \
+        >> Edge(color="darkorange") \
+        >> aggregator
