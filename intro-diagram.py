@@ -10,8 +10,13 @@ from diagrams.onprem.queue import Kafka
 from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Ing
 from diagrams.onprem.network import Istio
+from diagrams.generic.device import Mobile
 
-with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False):
+with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR"):
+
+    protocoldiameter = Mobile("Diameter")
+    protocolsip = Mobile("SIP")
+    protocolhttp2 = Mobile("HTTP/2")
 
     servicemesh = Istio("Service Mesh")
 
