@@ -9,7 +9,7 @@ from diagrams.onprem.network import Nginx
 from diagrams.onprem.queue import Kafka
 from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Ing
-from iagrams.onprem.network import Istio
+from diagrams.onprem.network import Istio
 
 with Diagram(name="Intro Diagram", show=False):
     ingress = Istio("")
