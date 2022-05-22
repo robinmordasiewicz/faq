@@ -77,6 +77,9 @@ pipeline {
         }
       }
       steps {
+        container('diagrams') {
+          sh 'sh diagrams.sh'
+        }
         container('imagemagick') {
           sh 'sh imagemagick.sh'
         }
@@ -85,9 +88,6 @@ pipeline {
         }
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
-        }
-        container('diagrams') {
-          sh 'sh diagrams.sh'
         }
       }
     }
