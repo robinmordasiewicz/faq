@@ -21,28 +21,28 @@ with Diagram(name="Intro Diagram", show=False):
             Server("Service Proxy")]
 
     with Cluster("Diameter"):
-        primary = Pod("Pod1")
+        primary = Pod("")
         primary \
-            - Edge(color="brown", style="dashed") \
-            - Pod("Pod2") \
+            - Edge(color="brown", style="dotted") \
+            - Pod("") \
             << Edge(label="") \
             << servicemesh
         grpcsvc >> Edge(color="brown") >> primary
 
     with Cluster("SIP"):
-        primary = Pod("Pod3")
+        primary = Pod("")
         primary \
-            - Edge(color="brown", style="dashed") \
-            - Pod("Pod4") \
+            - Edge(color="brown", style="dotted") \
+            - Pod("") \
             << Edge(label="") \
             << servicemesh
         grpcsvc >> Edge(color="brown") >> primary
 
     with Cluster("HTTP/2"):
-        primary = PostgreSQL("Pod5")
+        primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
-            - PostgreSQL("Pod6") \
+            - Pod("") \
             << Edge(label="") \
             << servicemesh
         grpcsvc >> Edge(color="black") >> primary
