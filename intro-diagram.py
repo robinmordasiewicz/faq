@@ -12,7 +12,12 @@ from diagrams.k8s.network import Ing
 from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
 
-with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR"):
+graph_attr = {
+    "fontsize": "45",
+    "bgcolor": "transparent"
+}
+
+with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
 
     userequipment = Mobile("Subscribers")
     spk = Ing("Service Proxy")
