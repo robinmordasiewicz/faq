@@ -7,6 +7,7 @@ from diagrams.onprem.aggregator import Fluentd
 from diagrams.onprem.monitoring import Grafana, Prometheus
 from diagrams.onprem.network import Nginx
 from diagrams.onprem.queue import Kafka
+from diagrams.k8s.compute import Pod
 
 with Diagram(name="Intro Diagram", show=False):
     ingress = Nginx("ingress")
@@ -19,19 +20,19 @@ with Diagram(name="Intro Diagram", show=False):
             Server("grpc1")]
 
     with Cluster("Diameter"):
-        primary = Redis("Pod1")
+        primary = Pod("Pod1")
         primary \
             - Edge(color="brown", style="dashed") \
-            - Redis("Pod2") \
+            - Pod("Pod2") \
             << Edge(label="collect") \
             << metrics
         grpcsvc >> Edge(color="brown") >> primary
 
     with Cluster("SIP"):
-        primary = Redis("Pod3")
+        primary = Pod("Pod3")
         primary \
             - Edge(color="brown", style="dashed") \
-            - Redis("Pod4") \
+            - Pod("Pod4") \
             << Edge(label="collect") \
             << metrics
         grpcsvc >> Edge(color="brown") >> primary
