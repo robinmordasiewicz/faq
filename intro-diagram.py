@@ -8,7 +8,7 @@ from diagrams.onprem.monitoring import Grafana, Prometheus
 from diagrams.onprem.network import Nginx
 from diagrams.onprem.queue import Kafka
 
-with Diagram(name="Advanced Web Service with On-Premise (colored)", show=False):
+with Diagram(name="intro-diagram", show=False):
     ingress = Nginx("ingress")
 
     metrics = Prometheus("metric")
@@ -16,9 +16,7 @@ with Diagram(name="Advanced Web Service with On-Premise (colored)", show=False):
 
     with Cluster("Service Cluster"):
         grpcsvc = [
-            Server("grpc1"),
-            Server("grpc2"),
-            Server("grpc3")]
+            Server("grpc1")]
 
     with Cluster("Sessions HA"):
         primary = Redis("session")
