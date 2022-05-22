@@ -24,6 +24,7 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
     
 
     userequipment - spk
+    servicemesh = Istio("Service Mesh")
 
     with Cluster("BIG-IP NEXT"):
         diameter = Pod("")
@@ -57,4 +58,3 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
             - servicemesh
         spk - Edge(color="black") - http2
 
-    servicemesh = Istio("Service Mesh")
