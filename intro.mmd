@@ -1,15 +1,16 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%
 graph LR;
-    a[Diameter - TCP/SCTP] --- spk(Service Proxy)
-    b[SIP - TCP/UDP] --- spk
-    c[HTTP/2 - TCP] --- spk
+    a([Diameter - TCP/SCTP]) --- spk[Service Proxy]
+    b([SIP - TCP/UDP]) --- spk
+    c([HTTP/2 - TCP]) --- spk
 
-    subgraph BIG-IP NEXT
+    subgraph bigipnext [BIG-IP NEXT]
         spk
     end
         spk --- pod1
         spk --- pod2
         spk --- pod3
-    subgraph "K8S Cluster"
+    subgraph k8scluster [K8S Cluster]
         subgraph "Diameter"
             pod1
         end
@@ -22,17 +23,14 @@ graph LR;
         pod1 --- aspenmesh
         pod2 --- aspenmesh
         pod3 --- aspenmesh
-            aspenmesh[Service Mesh]
     end
  
-   classDef protocols fill:#fff1f0,stroke:#000000,stroke-width:1px,color:#000,border-style: solid;
-   classDef f5 fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
-   classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+   classDef protocols fill:#fff1f0,stroke:#000000,stroke-width:1px,color:#000,border-style:solid;
+   classDef f5 fill:#ddd,stroke:#000000,stroke-width:1px,color:#000;
+   classDef k8s fill:#326ce5,stroke:#000000,stroke-width:1px,color:#fff;
    classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
    class a,b,c protocols;
    class spk,aspenmesh f5;
    class pod1,pod2,pod3,pod4,pod5,pod6 k8s;
-   class zoneA,zoneB cluster;
-
-
+   class k8scluster cluster;
 
