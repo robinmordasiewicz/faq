@@ -12,12 +12,12 @@ from diagrams.k8s.compute import Pod
 with Diagram(name="Intro Diagram", show=False):
     ingress = Nginx("ingress")
 
-    metrics = Prometheus("metric")
+    metrics = Prometheus("Service Mesh")
     metrics << Edge(color="firebrick", style="dashed") << Grafana("monitoring")
 
-    with Cluster("Service Cluster"):
+    with Cluster("BIG-IP NEXT"):
         grpcsvc = [
-            Server("grpc1")]
+            Server("Service Proxy")]
 
     with Cluster("Diameter"):
         primary = Pod("Pod1")
