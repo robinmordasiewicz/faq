@@ -8,12 +8,13 @@ from diagrams.onprem.monitoring import Grafana, Prometheus
 from diagrams.onprem.network import Nginx
 from diagrams.onprem.queue import Kafka
 from diagrams.k8s.compute import Pod
+from diagrams.k8s.network import Ing
 
 with Diagram(name="Intro Diagram", show=False):
-    ingress = Nginx("ingress")
+    ingress = Ing("ingress")
 
-    metrics = Prometheus("Service Mesh")
-    metrics << Edge(color="firebrick", style="dashed") << Grafana("monitoring")
+    servicemesh = Prometheus("Service Mesh")
+    servicemesh << Edge(color="firebrick", style="dashed") << Grafana("monitoring")
 
     with Cluster("BIG-IP NEXT"):
         grpcsvc = [
@@ -24,8 +25,8 @@ with Diagram(name="Intro Diagram", show=False):
         primary \
             - Edge(color="brown", style="dashed") \
             - Pod("Pod2") \
-            << Edge(label="collect") \
-            << metrics
+            << Edge(label="") \
+            << servicemesh
         grpcsvc >> Edge(color="brown") >> primary
 
     with Cluster("SIP"):
@@ -33,8 +34,8 @@ with Diagram(name="Intro Diagram", show=False):
         primary \
             - Edge(color="brown", style="dashed") \
             - Pod("Pod4") \
-            << Edge(label="collect") \
-            << metrics
+            << Edge(label="") \
+            << servicemesh
         grpcsvc >> Edge(color="brown") >> primary
 
     with Cluster("HTTP/2"):
@@ -42,8 +43,8 @@ with Diagram(name="Intro Diagram", show=False):
         primary \
             - Edge(color="brown", style="dotted") \
             - PostgreSQL("Pod6") \
-            << Edge(label="collect") \
-            << metrics
+            << Edge(label="") \
+            << servicemesh
         grpcsvc >> Edge(color="black") >> primary
 
     aggregator = Fluentd("logging")
