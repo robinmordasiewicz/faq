@@ -11,7 +11,7 @@ from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Ing
 from diagrams.onprem.network import Istio
 
-with Diagram(name="BIG-IP NEXT - Service Proxy for Kubernetes", show=False):
+with Diagram(name="BIG-IP NEXT - Cloud Native Solutions", show=False):
 
     servicemesh = Istio("Service Mesh")
 
@@ -24,25 +24,25 @@ with Diagram(name="BIG-IP NEXT - Service Proxy for Kubernetes", show=False):
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
-            << Edge(label="") \
-            << servicemesh
-        spk >> Edge(color="brown") >> primary
+            - Edge(label="") \
+            - servicemesh
+        spk - Edge(color="brown") - primary
 
     with Cluster("SIP"):
         primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
-            << Edge(label="") \
-            << servicemesh
-        spk >> Edge(color="brown") >> primary
+            - Edge(label="") \
+            - servicemesh
+        spk - Edge(color="brown") - primary
 
     with Cluster("HTTP/2"):
         primary = Pod("")
         primary \
             - Edge(color="brown", style="dotted") \
             - Pod("") \
-            << Edge(label="") \
-            << servicemesh
-        spk >> Edge(color="black") >> primary
+            - Edge(label="") \
+            - servicemesh
+        spk - Edge(color="black") - primary
 
