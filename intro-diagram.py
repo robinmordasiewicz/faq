@@ -20,8 +20,9 @@ graph_attr = {
     "bgcolor": "transparant"
 }
 subs_attr = {
-    "fontsize": "24",
-    "bgcolor": "#05335C"
+    "fontsize": "48",
+    "bgcolor": "#0E487A",
+    "color": "#FFFFFF"
 }
 node_attr = {
     "fontsize": "14",
