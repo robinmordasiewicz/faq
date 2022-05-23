@@ -34,7 +34,9 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
         spk - http2
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
-            spk - Edge(color="brown") - diameter
+            workers = [Pod(""),
+                       Pod(""),
+                       Pod("")]
         with Cluster("SIP"):
             spk - Edge(color="brown") - sip
         with Cluster("HTTP/2"):
