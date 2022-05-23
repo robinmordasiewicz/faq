@@ -17,7 +17,7 @@ from diagrams.custom import Custom
 
 global_attr = {
     "fontsize": "24",
-    "bgcolor": "transparant",
+    "bgcolor": "#FFFFFF",
     "fontcolor": "#000000",
     "fontname": "Arial"
 }
