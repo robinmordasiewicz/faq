@@ -34,8 +34,8 @@ pipeline {
             command:
             - cat
             tty: true
-          - name: mlt
-            image: robinhoodis/mlt:latest
+          - name: melt
+            image: robinhoodis/melt:latest
             imagePullPolicy: Always
             command:
             - cat
