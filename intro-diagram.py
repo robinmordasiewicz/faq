@@ -47,7 +47,7 @@ edge_attr = {
 with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="diagram", outformat="png", graph_attr=global_attr,node_attr=node_attr,edge_attr=edge_attr):
 
     subscribers = Mobile("Subscribers")
-    Edge(color="darkorange",style="dashed",label="SIP HTTP2 Diamter")
+    subscribers - Edge(color="darkorange",style="dashed",label="SIP HTTP2 Diamter")
     with Cluster("BIG-IP NEXT",graph_attr=spk_attr):
         spk = Custom("Service Proxy", "f5-logo-white.png")
         subscribers - spk
