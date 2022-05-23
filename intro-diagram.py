@@ -25,10 +25,11 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
             workers = [Pod(""),
-                       Pod(""),
                        Pod("")]
         with Cluster("SIP"):
-            Edge(color="brown")
+            workers = [Pod(""),
+                       Pod("")]
         with Cluster("HTTP/2"):
-            Edge(color="black") - Istio("Service Mesh")
-    Istio("Service Mesh")
+            workers = [Pod(""),
+                       Pod("")]
+    workers - Istio("Service Mesh")
