@@ -15,11 +15,11 @@ from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
 
 graph_attr = {
-    "fontsize": "36",
+    "fontsize": "24",
     "bgcolor": "transparent"
 }
 node_attr = {
-    "fontsize": "18",
+    "fontsize": "14",
     "bgcolor": "white"
 }
 edge_attr = {
