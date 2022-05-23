@@ -9,6 +9,8 @@ from diagrams.onprem.network import Nginx
 from diagrams.onprem.queue import Kafka
 from diagrams.k8s.compute import Pod
 from diagrams.k8s.network import Ing
+from diagrams.k8s.network import SVC
+from diagrams.k8s.compute import RS
 from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
 
@@ -25,12 +27,9 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
         spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
-            workers = [Pod(""),
-                       Pod("")]
+            RS("")
         with Cluster("SIP"):
-            workers = [Pod(""),
-                       Pod("")]
+            RS("")
         with Cluster("HTTP/2"):
-            workers = [Pod(""),
-                       Pod("")]
-        workers - Istio("Service Mesh")
+            RS("")
+        RS - Istio("Service Mesh")
