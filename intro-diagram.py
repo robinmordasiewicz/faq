@@ -18,13 +18,13 @@ from diagrams.custom import Custom
 global_attr = {
     "fontsize": "24",
     "bgcolor": "transparant",
-    "fontcolor": "#000000"
+    "fontcolor": "#000000",
     "fontname": "Arial"
 }
 k8s_attr = {
     "fontsize": "24",
     "bgcolor": "#E0E0E0",
-    "fontcolor": "#326ce5"
+    "fontcolor": "#326ce5",
     "fontname": "Arial"
 }
 spk_attr = {
@@ -36,7 +36,7 @@ spk_attr = {
 node_attr = {
     "fontsize": "140",
     "bgcolor": "yellow",
-    "fontcolor": "#FFFFFF"
+    "fontcolor": "#FFFFFF",
     "fontname": "Arial"
 }
 edge_attr = {
