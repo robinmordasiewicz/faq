@@ -47,7 +47,7 @@ with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filen
         spk - sip
         http2 = RS("HTTP/2")
         spk - http2
-        servicemesh = Istio("Service Mesh")
+        servicemesh = Custom("Service Mesh", "ASPEN.png")
         diameter - servicemesh
         sip - servicemesh
         http2 - servicemesh
