@@ -34,14 +34,9 @@ edge_attr = {
 
 with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr,node_attr=node_attr,edge_attr=edge_attr):
 
-    white_logo = Custom("white_logo", "f5-logo-white.png")
-    red_logo = Custom("red_logo", "f5-logo-rgb.png")
-
-    white_logo - red_logo
-
     subscribers = Mobile("Subscribers")
     with Cluster("BIG-IP NEXT",graph_attr=subs_attr):
-        spk = Nginx("Service Proxy")
+        spk = Custom("Service Proxy", "f5-logo-white.png")
         subscribers - spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
