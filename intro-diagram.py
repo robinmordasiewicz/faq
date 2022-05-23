@@ -23,11 +23,11 @@ node_attr = {
     "bgcolor": "white"
 }
 
-with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
+with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr,node_attr=node_attr):
 
     subscribers = Mobile("Subscribers")
     with Cluster("BIG-IP NEXT"):
-        spk = Nginx("Service Proxy",node_attr=node_attr)
+        spk = Nginx("Service Proxy")
         subscribers - spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
