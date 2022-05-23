@@ -21,8 +21,8 @@ graph_attr = {
 
 with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
 
-    Mobile("Subscribers")
     spk = Nginx("Service Proxy")
+    Mobile("Subscribers") = spk
     with Cluster("BIG-IP NEXT"):
         spk
     with Cluster("Kubernetes"):
@@ -32,6 +32,7 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
             sip = RS("")
         with Cluster("HTTP/2"):
             http2 = RS("")
-        diameter - Istio("Service Mesh")
-        sip - Istio("Service Mesh")
-        http2 - Istio("Service Mesh")
+        servicemesh = Istio("Service Mesh")
+        diameter - servicemesh
+        sip - servicemesh
+        http2 - servicemesh
