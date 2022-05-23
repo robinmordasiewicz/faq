@@ -28,7 +28,7 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
                        Pod(""),
                        Pod("")]
         with Cluster("SIP"):
-            spk - Edge(color="brown") - sip
+            Edge(color="brown")
         with Cluster("HTTP/2"):
-            spk - Edge(color="black") - http2
+            Edge(color="black")
     servicemesh = Istio("Service Mesh")
