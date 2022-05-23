@@ -21,7 +21,7 @@ graph_attr = {
 }
 subs_attr = {
     "fontsize": "24",
-    "bgcolor": "yellow"
+    "bgcolor": "#05335C"
 }
 node_attr = {
     "fontsize": "14",
