@@ -32,4 +32,4 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
         with Cluster("HTTP/2"):
             workers = [Pod(""),
                        Pod("")]
-    workers - Istio("Service Mesh")
+        workers - Istio("Service Mesh")
