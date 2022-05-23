@@ -22,6 +22,7 @@ graph_attr = {
 with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
 
     spk = Nginx("Service Proxy")
+    servicemesh = Istio("Service Mesh")
     Mobile("Subscribers") - spk
     with Cluster("BIG-IP NEXT"):
         spk
@@ -32,7 +33,6 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
             sip = RS("")
         with Cluster("HTTP/2"):
             http2 = RS("")
-        servicemesh = Istio("Service Mesh")
         diameter - servicemesh
         sip - servicemesh
         http2 - servicemesh
