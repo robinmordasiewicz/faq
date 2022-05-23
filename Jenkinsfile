@@ -68,7 +68,6 @@ pipeline {
           changeset "diagrams.sh"
           changeset "marp.sh"
           changeset "mermaid-cli.sh"
-          changeset "diagram.png"
           changeset "intro.mlt"
           changeset "intro.md"
           changeset "intro.mmd"
@@ -94,6 +93,7 @@ pipeline {
           not {changeset "intro.mp4"}
           not {changeset "intro.pptx"}
           not {changeset "diagram.png"}
+          triggeredBy cause: 'UserIdCause'
         }
       }
       steps {
