@@ -35,7 +35,7 @@ with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filen
 
     subscribers = Mobile("Subscribers")
     with Cluster("BIG-IP NEXT",graph_attr=subs_attr):
-        spk = Nginx("Service Proxy")
+        spk = Nginx("Service Proxy",graph_attr=subs_attr)
         subscribers - spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
