@@ -93,7 +93,6 @@ pipeline {
           not {changeset "intro.mp4"}
           not {changeset "intro.pptx"}
           not {changeset "diagram.png"}
-          triggeredBy cause: 'UserIdCause'
         }
       }
       steps {
