@@ -17,8 +17,8 @@ from diagrams.custom import Custom
 
 global_attr = {
     "fontsize": "24",
-    "bgcolor": "white",
-    "fontcolor": "#FFFFFF"
+    "bgcolor": "transparant",
+    "fontcolor": "#000000"
 }
 k8s_attr = {
     "fontsize": "24",
