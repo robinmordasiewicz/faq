@@ -24,14 +24,17 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
     subscribers = Mobile("Subscribers")
     with Cluster("BIG-IP NEXT"):
         spk = Nginx("Service Proxy")
-        subscribers - spk 
+        subscribers - spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
             diameter = RS("")
+            spk - diameter
         with Cluster("SIP"):
             sip = RS("")
+            spk - sip
         with Cluster("HTTP/2"):
             http2 = RS("")
+            spk - http2
         servicemesh = Istio("Service Mesh")
         diameter - servicemesh
         sip - servicemesh
