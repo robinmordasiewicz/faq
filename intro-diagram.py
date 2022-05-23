@@ -16,15 +16,15 @@ from diagrams.generic.device import Mobile
 
 graph_attr = {
     "fontsize": "24",
-    "bgcolor": "transparent"
+    "bgcolor": "red"
 }
 node_attr = {
     "fontsize": "14",
-    "bgcolor": "white"
+    "bgcolor": "yellow"
 }
 edge_attr = {
     "fontsize": "18",
-    "bgcolor": "white"
+    "bgcolor": "blue"
 }
 
 with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr,node_attr=node_attr,edge_attr=edge_attr):
