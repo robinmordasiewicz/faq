@@ -22,7 +22,7 @@ spk_attr = {
 }
 k8s_attr = {
     "fontsize": "24",
-    "bgcolor": "white",
+    "bgcolor": "#E0E0E0",
     "fontcolor": "#326ce5"
 }
 subs_attr = {
