@@ -48,7 +48,7 @@ with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filen
 
     subscribers = Mobile("Subscribers")
     subscribers - Edge(color="darkorange",style="dashed",label="SIP HTTP2 Diamter")
-    with Cluster("BIG-IP NEXT",graph_attr=spk_attr):
+    with Cluster("BIG-IP NEXT",graph_attr=spk_attr,node_attr=node_attr):
         spk = Custom("Service Proxy", "f5-logo-white.png")
         subscribers - spk
     with Cluster("Kubernetes",graph_attr=k8s_attr):
