@@ -15,15 +15,19 @@ from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
 
 graph_attr = {
-    "fontsize": "28",
+    "fontsize": "36",
     "bgcolor": "transparent"
 }
+node_attr = {
+    "fontsize": "29",
+    "bgcolor": "white"
+}
 
-with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
+with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
 
     subscribers = Mobile("Subscribers")
     with Cluster("BIG-IP NEXT"):
-        spk = Nginx("Service Proxy")
+        spk = Nginx("Service Proxy",node_attr=node_attr)
         subscribers - spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
