@@ -44,7 +44,7 @@ edge_attr = {
     "fontcolor": "#FFFFFF"
 }
 
-with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=global_attr,node_attr=node_attr,edge_attr=edge_attr):
+with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="diagram", outformat="png", graph_attr=global_attr,node_attr=node_attr,edge_attr=edge_attr):
 
     subscribers = Mobile("Subscribers")
     Edge(color="darkorange",style="dashed",label="SIP HTTP2 Diamter")
