@@ -2,8 +2,8 @@
 
 set -x
 
-COMMAND=(/bin/bash -c "mmdc -p /puppeteer-config.json -i intro.mmd -o intro.png -C mermaid.css -c config.json -t neutral")
-#COMMAND=(/bin/bash -c "/bin/bash")
+#COMMAND=(/bin/bash -c "mmdc -p /puppeteer-config.json -i intro.mmd -o intro.png -C mermaid.css -c config.json -t neutral")
+COMMAND=(/bin/bash -c "/bin/bash")
 
 DOC_IMG="robinhoodis/mermaid-cli:latest"
 #DOC_IMG="minlag/mermaid-cli:latest"
