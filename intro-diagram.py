@@ -19,9 +19,10 @@ graph_attr = {
 
 with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr):
 
-    Mobile("Subscribers") - Nginx("Service Proxy")
+    Mobile("Subscribers")
+    spk = Nginx("Service Proxy")
     with Cluster("BIG-IP NEXT"):
-        Nginx("Service Proxy")
+        spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
             workers = [Pod(""),
