@@ -79,8 +79,7 @@ pipeline {
       }
       steps {
         container('mermaid-cli') {
-          sh 'pwd'
-          sh 'ls -al'
+          sh 'sh mermaid-cli.sh'
         }
       }
     }
