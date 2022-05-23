@@ -23,7 +23,7 @@ subs_attr = {
     "fontsize": "22",
     "bgcolor": "#0E487A",
     "fontcolor": "#FFFFFF",
-    "fontname": "Arial-Bold"
+    "fontname": "Arial"
 }
 node_attr = {
     "fontsize": "14",
@@ -38,7 +38,7 @@ with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filen
 
     subscribers = Mobile("Subscribers")
     with Cluster("BIG-IP NEXT",graph_attr=subs_attr):
-        spk = Custom("Service Proxy", "f5-logo-white.png")
+        spk = Custom("Service Proxy", "f5-logo-white.png",graph_attr=graph_attr)
         subscribers - spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
