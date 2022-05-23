@@ -15,7 +15,7 @@ from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
 from diagrams.custom import Custom
 
-spk_attr = {
+global_attr = {
     "fontsize": "24",
     "bgcolor": "white",
     "fontcolor": "#FFFFFF"
@@ -25,7 +25,7 @@ k8s_attr = {
     "bgcolor": "#E0E0E0",
     "fontcolor": "#326ce5"
 }
-subs_attr = {
+spk_attr = {
     "fontsize": "22",
     "bgcolor": "#0E487A",
     "fontcolor": "#FFFFFF",
@@ -42,10 +42,10 @@ edge_attr = {
     "fontcolor": "#FFFFFF"
 }
 
-with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=spk_attr,node_attr=node_attr,edge_attr=edge_attr):
+with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=global_attr,node_attr=node_attr,edge_attr=edge_attr):
 
     subscribers = Mobile("Subscribers")
-    with Cluster("BIG-IP NEXT",graph_attr=subs_attr):
+    with Cluster("BIG-IP NEXT",graph_attr=spk_attr):
         spk = Custom("Service Proxy", "f5-logo-white.png")
         subscribers - spk
     with Cluster("Kubernetes",graph_attr=k8s_attr):
