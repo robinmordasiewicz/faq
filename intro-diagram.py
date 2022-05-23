@@ -29,7 +29,7 @@ node_attr = {
 }
 edge_attr = {
     "fontsize": "18",
-    "bgcolor": "blue",
+    "bgcolor": "#326ce5",
     "fontcolor": "#FFFFFF"
 }
 
