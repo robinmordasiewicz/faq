@@ -19,7 +19,7 @@ graph_attr = {
     "bgcolor": "transparent"
 }
 node_attr = {
-    "fontsize": "29",
+    "fontsize": "18",
     "bgcolor": "white"
 }
 
