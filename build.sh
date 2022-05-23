@@ -2,11 +2,12 @@
 
 set -x
 
-COMMAND=(/bin/bash -c " -i intro.mmd -o intro.png -C mermaid.css -c mermaid-config.json -t neutral")
+COMMAND=(/bin/bash -c "mmdc -p /puppeteer-config.json -i intro.mmd -o intro.png -C mermaid.css -c config.json -t neutral")
+#COMMAND=(/bin/bash -c "/bin/bash")
 
 DOC_IMG="robinhoodis/mermaid-cli:latest"
+#DOC_IMG="minlag/mermaid-cli:latest"
 
 exec docker run --rm -it \
-  -v "$PWD":"/home/ubuntu" --workdir "/home/ubuntu" \
-  ${DOCKER_RUN_ARGS} \
+  -v "$PWD":"/data" --workdir "/home/ubuntu" \
   ${DOC_IMG} "${COMMAND[@]}"
