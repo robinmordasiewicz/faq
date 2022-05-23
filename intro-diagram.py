@@ -17,7 +17,8 @@ from diagrams.custom import Custom
 
 graph_attr = {
     "fontsize": "24",
-    "bgcolor": "white"
+    "bgcolor": "transparant"
+    "fontcolor": "#FFFFFF",
 }
 subs_attr = {
     "fontsize": "22",
@@ -28,10 +29,12 @@ subs_attr = {
 node_attr = {
     "fontsize": "14",
     "bgcolor": "yellow"
+    "fontcolor": "#FFFFFF",
 }
 edge_attr = {
     "fontsize": "18",
     "bgcolor": "blue"
+    "fontcolor": "#FFFFFF",
 }
 
 with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr,node_attr=node_attr,edge_attr=edge_attr):
