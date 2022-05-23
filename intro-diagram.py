@@ -17,8 +17,8 @@ from diagrams.custom import Custom
 
 graph_attr = {
     "fontsize": "24",
-    "bgcolor": "transparant",
-    "fontcolor": "#FFFFFF"
+    "bgcolor": "white",
+    "fontcolor": "#000000"
 }
 subs_attr = {
     "fontsize": "22",
