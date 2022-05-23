@@ -27,9 +27,11 @@ with Diagram(name="F5 BIG-IP NEXT - Cloud Native Solutions", show=False, directi
         spk
     with Cluster("Kubernetes"):
         with Cluster("Diameter"):
-            RS("")
+            diamter = RS("")
         with Cluster("SIP"):
-            RS("")
+            sip = RS("")
         with Cluster("HTTP/2"):
-            RS("")
-        RS - Istio("Service Mesh")
+            http2 = RS("")
+        diameter - Istio("Service Mesh")
+        sip - Istio("Service Mesh")
+        http2 - Istio("Service Mesh")
