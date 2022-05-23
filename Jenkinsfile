@@ -64,7 +64,7 @@ pipeline {
           changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
-          changeset "mlt.sh"
+          changeset "melt.sh"
           changeset "diagrams.sh"
           changeset "marp.sh"
           changeset "mermaid-cli.sh"
@@ -78,8 +78,23 @@ pipeline {
         }
       }
       steps {
+        container('diagrams') {
+          sh 'sh diagrams.sh'
+        }
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
+        }
+        container('melt') {
+          sh 'sh melt.sh'
+        }
+        container('imagemagick') {
+          sh 'sh imagemagick.sh'
+        }
+        container('ffmpeg') {
+          sh 'sh ffmpeg.sh'
+        }
+        container('marp') {
+          sh 'sh marp.sh'
         }
       }
     }
