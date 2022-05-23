@@ -71,15 +71,13 @@ pipeline {
           changeset "diagram.png"
           changeset "intro.mlt"
           changeset "intro.md"
+          changeset "intro.mmd"
           changeset "Jenkinsfile"
           changeset "intro-diagram.py"
           triggeredBy cause: 'UserIdCause'
         }
       }
       steps {
-        container('diagrams') {
-          sh 'sh diagrams.sh'
-        }
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
         }
