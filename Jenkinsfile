@@ -79,7 +79,7 @@ pipeline {
       }
       steps {
         container('mermaid-cli') {
-          sh 'sh mermaid-cli.sh'
+          sh '-i intro.mmd -o intro.png -C mermaid.css -c config.json -t neutral'
         }
       }
     }
