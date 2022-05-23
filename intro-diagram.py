@@ -13,6 +13,7 @@ from diagrams.k8s.network import SVC
 from diagrams.k8s.compute import RS
 from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
+from diagrams.custom import Custom
 
 graph_attr = {
     "fontsize": "24",
