@@ -34,7 +34,7 @@ spk_attr = {
     "fontname": "Arial"
 }
 node_attr = {
-    "fontsize": "18",
+    "fontsize": "16",
     "fontcolor": "#000000",
     "fontname": "Arial"
 }
