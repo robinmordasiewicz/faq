@@ -1,5 +1,7 @@
 {
-    "flowchart": { 
+    "securityLevel": "loose",
+
+    "flowchart": {
         "htmlLabels": true,
         "curve": "basis" 
     }
