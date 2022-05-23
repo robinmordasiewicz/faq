@@ -18,6 +18,10 @@ graph_attr = {
     "fontsize": "24",
     "bgcolor": "transparant"
 }
+subs_attr = {
+    "fontsize": "24",
+    "bgcolor": "yellow"
+}
 node_attr = {
     "fontsize": "14",
     "bgcolor": "yellow"
@@ -30,7 +34,7 @@ edge_attr = {
 with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="SPK-diagram", outformat="png", graph_attr=graph_attr,node_attr=node_attr,edge_attr=edge_attr):
 
     subscribers = Mobile("Subscribers")
-    with Cluster("BIG-IP NEXT",graph_attr=graph_attr,edge_attr=edge_attr):
+    with Cluster("BIG-IP NEXT",graph_attr=subs_attr):
         spk = Nginx("Service Proxy")
         subscribers - spk
     with Cluster("Kubernetes"):
