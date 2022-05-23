@@ -34,9 +34,8 @@ spk_attr = {
     "fontname": "Arial"
 }
 node_attr = {
-    "fontsize": "140",
-    "bgcolor": "yellow",
-    "fontcolor": "#FFFFFF",
+    "fontsize": "40",
+    "fontcolor": "#000000",
     "fontname": "Arial"
 }
 edge_attr = {
