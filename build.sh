@@ -1,17 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
+#
 
-set -x
+exec docker run --rm -it -v "$PWD":"/home/ubuntu" --workdir "/home/ubuntu" robinhoodis/mermaid-cli:latest '(/bin/sh -c "mmdc -p /puppeteer-config.json -i intro.mmd -o intro.png -C mermaid.css -c mermaid-config.json -t neutral")'
 
-COMMAND=(/bin/sh -c "mmdc -p /puppeteer-config.json -i intro.mmd -o intro.png -C mermaid.css -c mermaid-config.json -t neutral")
-DOC_IMG="robinhoodis/mermaid-cli:latest"
-
-#exec docker run --rm -it \
-#  -v "$PWD":"/home/ubuntu" --workdir "/home/ubuntu" \
-#  ${DOC_IMG} "${COMMAND[@]}"
-
-COMMAND=(/bin/bash -c "python3 intro-diagram.py")
-DOC_IMG="robinhoodis/diagrams:latest"
-
-exec docker run --rm -it \
-  -v "$PWD":"/home/ubuntu" --workdir "/home/ubuntu" \
-  ${DOC_IMG} "${COMMAND[@]}"
+exec docker run --rm -it -v "$PWD":"/home/ubuntu" --workdir "/home/ubuntu" robinhoodis/diagrams:latest "python3 intro-diagram.py"
