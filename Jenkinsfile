@@ -17,7 +17,7 @@ pipeline {
             - cat
             tty: true
           - name: mermaid-cli
-            image: minlag/mermaid-cli:latest
+            image: robinhoodis/mermaid-cli:latest
             imagePullPolicy: Always
             command:
             - cat
