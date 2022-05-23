@@ -84,18 +84,6 @@ pipeline {
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
         }
-        container('melt') {
-          sh 'sh melt.sh'
-        }
-        container('imagemagick') {
-          sh 'sh imagemagick.sh'
-        }
-        container('ffmpeg') {
-          sh 'sh ffmpeg.sh'
-        }
-        container('marp') {
-          sh 'sh marp.sh'
-        }
       }
     }
     stage('Commit New Assets') {
