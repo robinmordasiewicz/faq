@@ -41,15 +41,12 @@ with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filen
         spk = Custom("Service Proxy", "f5-logo-white.png")
         subscribers - spk
     with Cluster("Kubernetes"):
-        with Cluster("Diameter"):
-            diameter = RS("")
-            spk - diameter
-        with Cluster("SIP"):
-            sip = RS("")
-            spk - sip
-        with Cluster("HTTP/2"):
-            http2 = RS("")
-            spk - http2
+        diameter = RS("")
+        spk - diameter
+        sip = RS("")
+        spk - sip
+        http2 = RS("")
+        spk - http2
         servicemesh = Istio("Service Mesh")
         diameter - servicemesh
         sip - servicemesh
