@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 
-if [ -e intro.png ];then
+if [ -f intro.png ];then
   rm intro.png
 fi
 

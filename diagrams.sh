@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-if [ -e diagram.png ];then
+if [ -f diagram.png ];then
   rm diagram.png
 fi
 
