@@ -67,7 +67,7 @@ pipeline {
           changeset "mlt.sh"
           changeset "diagrams.sh"
           changeset "marp.sh"
-          changeset "mermaid.sh"
+          changeset "mermaid-cli.sh"
           changeset "diagram.png"
           changeset "intro.mlt"
           changeset "intro.md"
@@ -79,6 +79,9 @@ pipeline {
       steps {
         container('diagrams') {
           sh 'sh diagrams.sh'
+        }
+        container('mermaid-cli') {
+          sh 'sh mermaid-cli.sh'
         }
       }
     }
