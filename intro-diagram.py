@@ -6,7 +6,7 @@ from diagrams.generic.device import Mobile
 
 global_attr = {
     "fontsize": "24",
-    "bgcolor": "#E0E0E0",
+    "bgcolor": "transparant",
     "fontcolor": "#326ce5",
     "fontname": "Arial"
 }
