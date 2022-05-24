@@ -29,6 +29,7 @@ node_attr = {
 }
 
 with Diagram(name="F5 - Cloud Native Solutions", show=False, direction="LR", filename="diagram1", outformat="png", graph_attr=global_attr,node_attr=node_attr):
+    C -->|Three| F[fa:fa-car Car]
 
     subscribers = Mobile("Subscribers")
     with Cluster("BIG-IP NEXT",graph_attr=spk_attr):
