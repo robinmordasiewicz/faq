@@ -3,8 +3,8 @@
 
 title="Title layout:"
 caption="Solid color option"
-presenter="Presenter Name"
-position="Position"
+presenter="Robin Mordasiewicz"
+position="Marketing Engineer"
 date=`TZ='America/Toronto' date +"%a %b %d, %Y - %H:%M:%S %Z"`
 BACKGROUNDCOLOR="#0E487A"
 INTROTITLEFONTCOLOR="#FFFFFF"
