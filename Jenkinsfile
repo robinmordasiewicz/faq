@@ -84,7 +84,9 @@ pipeline {
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
         }
-        sh 'git checkout main'
+        container('imagemagick') {
+          sh 'sh imagemagick.sh'
+        }
       }
     }
     stage('Commit New Assets') {

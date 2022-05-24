@@ -13,7 +13,6 @@ LOGO=f5-logo-white.png
 BACKGROUND="1920x1080-openslide.png"
 #BACKGROUND="corporate-template.png"
 
-
 #convert ${BACKGROUND} -verbose -strip -resize 1920x1080 -quality 100 -density 72x72 -units pixelsperinch tmp.png
 
 convert -size 1920x1080 xc:'#05335C' tmp.png
