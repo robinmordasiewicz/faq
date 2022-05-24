@@ -61,6 +61,7 @@ pipeline {
         beforeAgent true
         anyOf {
           changeset "1920x1080-openslide.png"
+          changeset "ASPEN.png"
           changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
           changeset "ffmpeg.sh"
