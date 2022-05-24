@@ -1,5 +1,8 @@
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%
 graph LR;
+
+    FONTAWESOME["fa:fa-gitlab"]
+
     a([Diameter - TCP/SCTP]) --- spk[Service Proxy]
     b([SIP - TCP/UDP]) --- spk
     c([HTTP/2 - TCP]) --- spk

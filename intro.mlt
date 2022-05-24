@@ -33,7 +33,24 @@
     <property name="global_feed">1</property>
     <property name="xml">was here</property>
   </producer>
-  <producer id="producer1" title="Anonymous Submission" in="00:00:00.000" out="00:00:14.915">
+  <producer id="producer1" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
+    <property name="length">03:59:60.027</property>
+    <property name="eof">pause</property>
+    <property name="resource">intro.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2022-05-14T03:22:51</property>
+    <property name="shotcut:caption">intro.png</property>
+    <property name="shotcut:detail">intro.png</property>
+    <property name="shotcut:hash">e51aff2ff52e0f02c0e688b688acb79f</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer2" title="Anonymous Submission" in="00:00:00.000" out="00:00:14.915">
     <property name="length">00:00:14.948</property>
     <property name="eof">pause</property>
     <property name="resource">clip1.mp4</property>
@@ -53,8 +70,8 @@
   </producer>
   <tractor id="tractor0" title="Anonymous Submission" global_feed="1" in="00:00:00.000" out="00:00:00.968">
     <property name="shotcut:transition">lumaMix</property>
-    <track producer="producer0" in="00:00:01.802" out="00:00:02.769"/>
-    <track producer="producer1" in="00:00:00.801" out="00:00:01.768"/>
+    <track producer="producer1" in="00:00:01.802" out="00:00:02.769"/>
+    <track producer="producer2" in="00:00:00.801" out="00:00:01.768"/>
     <transition id="transition0" out="00:00:00.968">
       <property name="a_track">0</property>
       <property name="b_track">1</property>
@@ -70,7 +87,43 @@
       <property name="accepts_blanks">1</property>
     </transition>
   </tractor>
-  <producer id="producer2" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
+  <producer id="producer3" title="Anonymous Submission" in="00:00:00.000" out="00:00:14.915">
+    <property name="length">00:00:14.948</property>
+    <property name="eof">pause</property>
+    <property name="resource">clip1.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2022-05-13T17:51:03</property>
+    <property name="shotcut:hash">2a03514e8f0be6175b355e4cb59b08a8</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">clip1.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer4" title="Anonymous Submission" in="00:00:00.000" out="00:00:14.915">
+    <property name="length">00:00:14.948</property>
+    <property name="eof">pause</property>
+    <property name="resource">clip1.mp4</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2022-05-13T17:51:03</property>
+    <property name="shotcut:hash">2a03514e8f0be6175b355e4cb59b08a8</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">clip1.mp4</property>
+    <property name="shotcut:skipConvert">1</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer5" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
     <property name="length">03:59:60.027</property>
     <property name="eof">pause</property>
     <property name="resource">outro.png</property>
@@ -89,8 +142,8 @@
   </producer>
   <tractor id="tractor1" title="Anonymous Submission" global_feed="1" in="00:00:00.000" out="00:00:00.801">
     <property name="shotcut:transition">lumaMix</property>
-    <track producer="producer1" in="00:00:14.114" out="00:00:14.915"/>
-    <track producer="producer2" in="00:00:00.000" out="00:00:00.801"/>
+    <track producer="producer4" in="00:00:14.114" out="00:00:14.915"/>
+    <track producer="producer5" in="00:00:00.000" out="00:00:00.801"/>
     <transition id="transition2" out="00:00:00.801">
       <property name="a_track">0</property>
       <property name="b_track">1</property>
@@ -108,16 +161,33 @@
       <property name="accepts_blanks">1</property>
     </transition>
   </tractor>
+  <producer id="producer6" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
+    <property name="length">03:59:60.027</property>
+    <property name="eof">pause</property>
+    <property name="resource">outro.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2022-05-14T03:22:51</property>
+    <property name="shotcut:caption">outro.png</property>
+    <property name="shotcut:detail">outro.png</property>
+    <property name="shotcut:hash">58a9b9a14123cf3dc3829fcf294c23ac</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
   <playlist id="playlist0">
     <property name="shotcut:video">1</property>
     <property name="shotcut:name">V1</property>
     <entry producer="producer0" in="00:00:00.000" out="00:00:01.768"/>
     <entry producer="tractor0" in="00:00:00.000" out="00:00:00.968"/>
-    <entry producer="producer1" in="00:00:01.802" out="00:00:14.081"/>
+    <entry producer="producer3" in="00:00:01.802" out="00:00:14.081"/>
     <entry producer="tractor1" in="00:00:00.000" out="00:00:00.801"/>
-    <entry producer="producer2" in="00:00:00.834" out="00:00:03.971"/>
+    <entry producer="producer6" in="00:00:00.834" out="00:00:03.971"/>
   </playlist>
-  <producer id="producer3" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
+  <producer id="producer7" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
     <property name="length">03:59:60.027</property>
     <property name="eof">pause</property>
     <property name="resource">diagram1.png</property>
@@ -136,8 +206,53 @@
     <property name="force_aspect_ratio">1</property>
     <property name="shotcut_aspect_num">1</property>
     <property name="shotcut_aspect_den">1</property>
+    <filter id="filter0" out="00:00:02.336">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">0</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">19 87 993 749 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+    <filter id="filter1" out="00:00:02.336">
+      <property name="start">1</property>
+      <property name="level">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeInBrightness</property>
+      <property name="alpha">00:00:00.000=0;00:00:00.467=1</property>
+      <property name="shotcut:animIn">00:00:00.501</property>
+    </filter>
+    <filter id="filter2" out="00:00:02.336">
+      <property name="start">1</property>
+      <property name="level">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">00:00:01.702=1;00:00:02.336=0</property>
+      <property name="shotcut:animOut">00:00:00.667</property>
+    </filter>
+    <filter id="filter3" out="00:00:02.336">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:00.000=-60;00:00:00.467=0</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeInVolume</property>
+      <property name="shotcut:animIn">15</property>
+    </filter>
+    <filter id="filter4" out="00:00:02.336">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:01.702=0;00:00:02.336=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">20</property>
+    </filter>
   </producer>
-  <producer id="producer4" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
+  <producer id="producer8" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
     <property name="length">03:59:60.027</property>
     <property name="eof">pause</property>
     <property name="resource">diagram2.png</property>
@@ -153,14 +268,59 @@
     <property name="ignore_points">0</property>
     <property name="global_feed">1</property>
     <property name="xml">was here</property>
+    <filter id="filter5" out="00:00:02.302">
+      <property name="background">colour:0</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">820 454 999 539 1</property>
+      <property name="transition.valign">top</property>
+      <property name="transition.halign">left</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+    <filter id="filter6" out="00:00:02.302">
+      <property name="start">1</property>
+      <property name="level">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeInBrightness</property>
+      <property name="alpha">00:00:00.000=0;00:00:00.300=1</property>
+      <property name="shotcut:animIn">00:00:00.334</property>
+    </filter>
+    <filter id="filter7" out="00:00:02.302">
+      <property name="start">1</property>
+      <property name="level">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">00:00:01.468=1;00:00:02.302=0</property>
+      <property name="shotcut:animOut">00:00:00.868</property>
+    </filter>
+    <filter id="filter8" out="00:00:02.302">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:00.000=-60;00:00:00.300=0</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeInVolume</property>
+      <property name="shotcut:animIn">10</property>
+    </filter>
+    <filter id="filter9" out="00:00:02.302">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:01.468=0;00:00:02.302=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">26</property>
+    </filter>
   </producer>
   <playlist id="playlist1">
     <property name="shotcut:video">1</property>
     <property name="shotcut:name">V2</property>
     <blank length="00:00:04.271"/>
-    <entry producer="producer3" in="00:00:00.000" out="00:00:01.568"/>
-    <blank length="00:00:01.835"/>
-    <entry producer="producer4" in="00:00:00.000" out="00:00:02.302"/>
+    <entry producer="producer7" in="00:00:00.000" out="00:00:02.336"/>
+    <blank length="00:00:02.269"/>
+    <entry producer="producer8" in="00:00:00.000" out="00:00:02.302"/>
   </playlist>
   <tractor id="tractor2" title="Shotcut version 20.02.17" global_feed="1" in="00:00:00.000" out="00:00:19.086">
     <property name="shotcut">1</property>
