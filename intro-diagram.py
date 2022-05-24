@@ -6,8 +6,8 @@ from diagrams.generic.device import Mobile
 
 global_attr = {
     "fontsize": "24",
-    "bgcolor": "#FFFFFF",
-    "fontcolor": "#000000",
+    "bgcolor": "#E0E0E0",
+    "fontcolor": "#326ce5",
     "fontname": "Arial"
 }
 k8s_attr = {
