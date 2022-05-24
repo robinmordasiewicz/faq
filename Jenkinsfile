@@ -87,6 +87,9 @@ pipeline {
         container('imagemagick') {
           sh 'sh imagemagick.sh'
         }
+        container('melt') {
+          sh 'sh melt.sh'
+        }
       }
     }
     stage('Commit New Assets') {

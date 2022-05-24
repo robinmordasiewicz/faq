@@ -117,18 +117,78 @@
     <entry producer="tractor1" in="00:00:00.000" out="00:00:00.801"/>
     <entry producer="producer2" in="00:00:00.834" out="00:00:03.971"/>
   </playlist>
+  <producer id="producer3" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
+    <property name="length">03:59:60.027</property>
+    <property name="eof">pause</property>
+    <property name="resource">diagram1.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2022-05-24T00:45:34</property>
+    <property name="shotcut:caption">diagram1.png</property>
+    <property name="shotcut:detail">diagram1.png</property>
+    <property name="shotcut:hash">b9c0a4843c7666c5605fa9155931288b</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="force_aspect_ratio">1</property>
+    <property name="shotcut_aspect_num">1</property>
+    <property name="shotcut_aspect_den">1</property>
+  </producer>
+  <producer id="producer4" title="Anonymous Submission" in="00:00:00.000" out="03:59:59.993">
+    <property name="length">03:59:60.027</property>
+    <property name="eof">pause</property>
+    <property name="resource">diagram2.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2022-05-24T01:00:19</property>
+    <property name="shotcut:caption">diagram2.png</property>
+    <property name="shotcut:detail">diagram2.png</property>
+    <property name="shotcut:hash">a60c0aeaa9a9c789a70a559dd75ab8f0</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V2</property>
+    <blank length="00:00:04.271"/>
+    <entry producer="producer3" in="00:00:00.000" out="00:00:01.568"/>
+    <blank length="00:00:01.835"/>
+    <entry producer="producer4" in="00:00:00.000" out="00:00:02.302"/>
+  </playlist>
   <tractor id="tractor2" title="Shotcut version 20.02.17" global_feed="1" in="00:00:00.000" out="00:00:19.086">
     <property name="shotcut">1</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">1</property>
     <track producer="background"/>
     <track producer="playlist0"/>
+    <track producer="playlist1"/>
     <transition id="transition4">
       <property name="a_track">0</property>
       <property name="b_track">1</property>
       <property name="mlt_service">mix</property>
       <property name="always_active">1</property>
       <property name="sum">1</property>
+    </transition>
+    <transition id="transition5">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition6">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0.9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">0</property>
     </transition>
   </tractor>
 </mlt>
