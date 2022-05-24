@@ -1,10 +1,9 @@
 #!/bin/sh
 #
 
-if [ -f intro.png ];then
-  rm intro.png
+if [ -f diagram2.png ];then
+  rm diagram2.png
 fi
 
 /usr/local/bin/mmdc -p /puppeteer-config.json -i intro.mmd -o diagram2.png -C mermaid.css -c mermaid-config.json -t neutral
 
-#-i intro.mmd -o intro.png -C mermaid.css -c mermaid-config.json -t neutral

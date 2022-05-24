@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 
-if [ -f diagram.png ];then
-  rm diagram.png
+if [ -f diagram1.png ];then
+  rm diagram1.png
 fi
 
 python3 intro-diagram.py
