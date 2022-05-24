@@ -84,9 +84,7 @@ pipeline {
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
         }
-        container('ubuntu') {
-          sh 'git status'
-        }
+        sh 'git status'
       }
     }
     stage('Commit New Assets') {
