@@ -84,7 +84,7 @@ pipeline {
         container('mermaid-cli') {
           sh 'sh mermaid-cli.sh'
         }
-        sh 'git checkout master'
+        sh 'git checkout main'
       }
     }
     stage('Commit New Assets') {
@@ -101,6 +101,7 @@ pipeline {
         sh 'git config user.email "robin@mordasiewicz.com"'
         sh 'git config user.name "Robin Mordasiewicz"'
         sh 'git add . && git diff --staged --quiet || git commit -m "New Assets"'
+        sh 'git status'
         withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'git')]) {
           sh 'git push origin HEAD:main'
         }
