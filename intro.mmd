@@ -7,9 +7,9 @@ graph LR;
     subgraph bigipnext [BIG-IP - NEXT]
         spk
     end
-        spk --- pod1
-        spk --- pod2
-        spk --- pod3
+        spk --- pod1(Replica Set)
+        spk --- pod2(Replica Set)
+        spk --- pod3(Replica Set)
     subgraph k8scluster [K8S Cluster]
         subgraph "Diameter"
             pod1
