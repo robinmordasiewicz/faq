@@ -1,8 +1,8 @@
 from diagrams import Cluster, Diagram, Edge
 from diagrams.k8s.compute import RS
+from diagrams.custom import Custom
 from diagrams.onprem.network import Istio
 from diagrams.generic.device import Mobile
-from diagrams.custom import Custom
 
 global_attr = {
     "fontsize": "24",
@@ -27,13 +27,8 @@ node_attr = {
     "fontcolor": "#000000",
     "fontname": "Arial"
 }
-edge_attr = {
-    "fontsize": "18",
-    "bgcolor": "#326ce5",
-    "fontcolor": "#FFFFFF"
-}
 
-with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="diagram", outformat="png", graph_attr=global_attr,node_attr=node_attr,edge_attr=edge_attr):
+with Diagram(name="F5 Cloud Native Solutions", show=False, direction="LR", filename="diagram", outformat="png", graph_attr=global_attr,node_attr=node_attr):
 
     subscribers = Mobile("Subscribers")
     subscribers - Edge(color="darkorange",style="dashed",label="SIP HTTP2 Diamter")
