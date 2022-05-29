@@ -56,23 +56,27 @@ pipeline {
         checkout scm
       }
     }
-    stage('Create New Assets') {
+    stage('Create new Images') {
       when {
         beforeAgent true
         anyOf {
-          changeset "1920x1080-openslide.png"
-          changeset "ASPEN.png"
-          changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
-          changeset "ffmpeg.sh"
-          changeset "melt.sh"
+          changeset "intro.png"
+          triggeredBy cause: 'UserIdCause'
+        }
+      }
+      steps {
+        container('imagemagick') {
+          sh 'sh imagemagick.sh'
+        }
+      }
+    }
+    stage('Create new Diagrams') {
+      when {
+        beforeAgent true
+        anyOf {
+          changeset "ASPEN.png"
           changeset "diagrams.sh"
-          changeset "marp.sh"
-          changeset "mermaid-cli.sh"
-          changeset "intro.mlt"
-          changeset "intro.md"
-          changeset "intro.mmd"
-          changeset "Jenkinsfile"
           changeset "intro-diagram.py"
           triggeredBy cause: 'UserIdCause'
         }
@@ -81,14 +85,40 @@ pipeline {
         container('diagrams') {
           sh 'sh diagrams.sh'
         }
-        container('mermaid-cli') {
-          sh 'sh mermaid-cli.sh'
+      }
+    }
+    stage('Create new mp4') {
+      when {
+        beforeAgent true
+        anyOf {
+          changeset "melt.sh"
+          changeset "intro.mlt"
+          triggeredBy cause: 'UserIdCause'
         }
-        container('imagemagick') {
-          sh 'sh imagemagick.sh'
-        }
+      }
+      steps {
         container('melt') {
           sh 'sh melt.sh'
+        }
+      }
+    }
+    stage('Create New Assets') {
+      when {
+        beforeAgent true
+        anyOf {
+          changeset "1920x1080-openslide.png"
+          changeset "f5-logo-rgb.png"
+          changeset "ffmpeg.sh"
+          changeset "marp.sh"
+          changeset "mermaid-cli.sh"
+          changeset "intro.md"
+          changeset "intro.mmd"
+          triggeredBy cause: 'UserIdCause'
+        }
+      }
+      steps {
+        container('mermaid-cli') {
+          sh 'sh mermaid-cli.sh'
         }
       }
     }
