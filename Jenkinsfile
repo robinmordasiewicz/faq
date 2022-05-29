@@ -103,7 +103,7 @@ pipeline {
         }
       }
     }
-    stage('mp4') {
+    stage('Video') {
       when {
         beforeAgent true
         anyOf {
@@ -120,7 +120,7 @@ pipeline {
         }
       }
     }
-    stage('Create PPT') {
+    stage('PPTX') {
       when {
         beforeAgent true
         anyOf {
