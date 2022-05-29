@@ -56,10 +56,12 @@ pipeline {
         checkout scm
       }
     }
-    stage('Create new Images') {
+    stage('Create Images') {
       when {
         beforeAgent true
         anyOf {
+          changeset "1920x1080-openslide.png"
+          changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
           changeset "intro.png"
           triggeredBy cause: 'UserIdCause'
@@ -71,7 +73,7 @@ pipeline {
         }
       }
     }
-    stage('Create new Diagrams') {
+    stage('Create Diagrams') {
       when {
         beforeAgent true
         anyOf {
@@ -87,7 +89,7 @@ pipeline {
         }
       }
     }
-    stage('Create new mp4') {
+    stage('Create mp4') {
       when {
         beforeAgent true
         anyOf {
@@ -102,16 +104,26 @@ pipeline {
         }
       }
     }
-    stage('Create New Assets') {
+    stage('Create PPT') {
       when {
         beforeAgent true
         anyOf {
-          changeset "1920x1080-openslide.png"
-          changeset "f5-logo-rgb.png"
-          changeset "ffmpeg.sh"
           changeset "marp.sh"
-          changeset "mermaid-cli.sh"
           changeset "intro.md"
+          triggeredBy cause: 'UserIdCause'
+        }
+      }
+      steps {
+        container('marp') {
+          sh 'sh marp.sh'
+        }
+      }
+    }
+    stage('Create Mermaid Diagrams') {
+      when {
+        beforeAgent true
+        anyOf {
+          changeset "mermaid-cli.sh"
           changeset "intro.mmd"
           triggeredBy cause: 'UserIdCause'
         }
