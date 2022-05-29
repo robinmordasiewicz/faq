@@ -120,23 +120,23 @@ pipeline {
         }
       }
     }
-//    stage('PPTX') {
-//      when {
-//        beforeAgent true
-//        anyOf {
-//          changeset "marp.sh"
-//          changeset "intro.png"
-//          changeset "diagram.png"
-//          changeset "intro.md"
-//          triggeredBy cause: 'UserIdCause'
-//       }
-//      }
-//      steps {
-//        container('marp') {
-//          sh 'sh marp.sh'
-//        }
-//      }
-//    }
+    stage('PPTX') {
+      when {
+        beforeAgent true
+        anyOf {
+          changeset "marp.sh"
+          changeset "intro.png"
+          changeset "diagram.png"
+          changeset "intro.md"
+          triggeredBy cause: 'UserIdCause'
+       }
+      }
+      steps {
+        container('marp') {
+          sh 'sh marp.sh'
+        }
+      }
+    }
     stage('Commit New Assets') {
       when {
         beforeAgent true
@@ -147,13 +147,13 @@ pipeline {
         }
       }
       steps {
-        sh 'git config user.email "robin@mordasiewicz.com"'
-        sh 'git config user.name "Robin Mordasiewicz"'
-        sh 'git add . && git diff --staged --quiet || git commit -m "New Assets"'
+//        sh 'git config user.email "robin@mordasiewicz.com"'
+//        sh 'git config user.name "Robin Mordasiewicz"'
+//        sh 'git add . && git diff --staged --quiet || git commit -m "New Assets"'
         sh 'git status'
-        withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'git')]) {
-          sh 'git push origin HEAD:main'
-        }
+//        withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'git')]) {
+//          sh 'git push origin HEAD:main'
+//        }
       }
     }
   }
