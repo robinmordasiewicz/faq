@@ -1,17 +1,8 @@
 #!/bin/bash
 #
 
-title="BIG-IP NeXT"
-caption="Carrier Grade NAT"
-presenter="Cloud Native Functions"
-position="Distributed Cloud"
-date=`TZ='America/Toronto' date +"%a %b %d, %Y - %H:%M:%S %Z"`
-
-BACKGROUNDCOLOR="#0F487A"
-INTROTITLEFONTCOLOR="#FFFFFF"
-INTROCAPTIONFONTCOLOR="#FFFFFF"
-LOGO=f5-logo-white.png
-BACKGROUND="1920x1080-openslide.png"
+source index.conf
+source theme.conf
 
 #convert ${BACKGROUND} -verbose -strip -resize 1920x1080 -quality 100 -density 72x72 -units pixelsperinch tmp.png
 
@@ -28,10 +19,10 @@ convert -font Arial-Bold -pointsize 96 -fill ${INTROTITLEFONTCOLOR} -annotate +7
 convert -font Arial-Bold -pointsize 96 -fill ${INTROCAPTIONFONTCOLOR} -annotate +72+543 "${caption}" title.png title-caption.png
 convert -font Arial-Bold -pointsize 31 -fill ${INTROCAPTIONFONTCOLOR} -annotate +72+660 "${presenter}" title-caption.png title-caption-presenter.png
 convert -font Arial-Bold -pointsize 31 -fill ${INTROCAPTIONFONTCOLOR} -annotate +72+728 "${position}" title-caption-presenter.png title-caption-presenter-position.png
-convert -font Arial-Bold -pointsize 31 -fill ${INTROCAPTIONFONTCOLOR} -annotate +72+863 "${date}" title-caption-presenter-position.png title-caption-presenter-position-date.png
+convert -font Arial-Bold -pointsize 31 -fill ${INTROCAPTIONFONTCOLOR} -annotate +72+863 "${version}" title-caption-presenter-position.png title-caption-presenter-position-version.png
 
-#convert title-caption-presenter-position-date.png ${LOGO} -gravity northeast -geometry 130x130+110+110 -composite intro.png
-convert title-caption-presenter-position-date.png ${LOGO} -gravity northwest -geometry 95x95+75+75 -composite intro.png
+#convert title-caption-presenter-position-version.png ${LOGO} -gravity northeast -geometry 130x130+110+110 -composite intro.png
+convert title-caption-presenter-position-version.png ${LOGO} -gravity northwest -geometry 95x95+75+75 -composite intro.png
 convert yellow-red-orange-cyan-blue.png ${LOGO} -gravity center -geometry 380x380-0-19 -composite outro.png
 
-rm yellow.png yellow-red.png yellow-red-orange.png yellow-red-orange-cyan.png yellow-red-orange-cyan-blue.png hero-yellow-red-orange-cyan-blue.png title-caption.png title.png tmp.png title-caption-presenter.png title-caption-presenter-position.png title-caption-presenter-position-date.png
+rm yellow.png yellow-red.png yellow-red-orange.png yellow-red-orange-cyan.png yellow-red-orange-cyan-blue.png hero-yellow-red-orange-cyan-blue.png title-caption.png title.png tmp.png title-caption-presenter.png title-caption-presenter-position.png title-caption-presenter-position-version.png
