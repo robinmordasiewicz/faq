@@ -120,23 +120,23 @@ pipeline {
         }
       }
     }
-    stage('PPTX') {
-      when {
-        beforeAgent true
-        anyOf {
-          changeset "marp.sh"
-          changeset "intro.png"
-          changeset "diagram.png"
-          changeset "intro.md"
-          triggeredBy cause: 'UserIdCause'
-        }
-      }
-      steps {
-        container('marp') {
-          sh 'sh marp.sh'
-        }
-      }
-    }
+//    stage('PPTX') {
+//      when {
+//        beforeAgent true
+//        anyOf {
+//          changeset "marp.sh"
+//          changeset "intro.png"
+//          changeset "diagram.png"
+//          changeset "intro.md"
+//          triggeredBy cause: 'UserIdCause'
+//       }
+//      }
+//      steps {
+//        container('marp') {
+//          sh 'sh marp.sh'
+//        }
+//      }
+//    }
     stage('Commit New Assets') {
       when {
         beforeAgent true
