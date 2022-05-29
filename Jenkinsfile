@@ -148,7 +148,7 @@ pipeline {
         beforeAgent true
         expression {
           container('ubuntu') {
-            sh(returnStatus: true, script: 'git diff --quiet && git diff --staged --quiet || echo "1"') == 0
+            sh(returnStatus: true, script: 'git diff-index --quiet HEAD -- || echo "untracked" ') == 0
           }
         }
       }
