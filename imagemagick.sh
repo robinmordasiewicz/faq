@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-title="CGNAT"
+title="BIG-IP NEXT - CGNAT"
 caption="Cloud Native Functions"
 presenter=""
 position=""
