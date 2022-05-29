@@ -138,6 +138,14 @@ pipeline {
       }
     }
     stage('Commit New Assets') {
+      when {
+        beforeAgent true
+        expression {
+          container('ubuntu') {
+            sh(returnStatus: true, script: 'git diff --staged --quiet') == 0
+          }
+        }
+      }
       steps {
         sh 'git config user.email "robin@mordasiewicz.com"'
         sh 'git config user.name "Robin Mordasiewicz"'
