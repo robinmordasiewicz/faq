@@ -56,7 +56,7 @@ pipeline {
         checkout scm
       }
     }
-    stage('Create Images') {
+    stage('Images') {
       when {
         beforeAgent true
         anyOf {
@@ -72,7 +72,7 @@ pipeline {
         }
       }
     }
-    stage('Create Diagrams') {
+    stage('Python Diagrams') {
       when {
         beforeAgent true
         anyOf {
@@ -88,7 +88,22 @@ pipeline {
         }
       }
     }
-    stage('Create mp4') {
+    stage('Mermaid Diagrams') {
+      when {
+        beforeAgent true
+        anyOf {
+          changeset "mermaid-cli.sh"
+          changeset "intro.mmd"
+          triggeredBy cause: 'UserIdCause'
+        }
+      }
+      steps {
+        container('mermaid-cli') {
+          sh 'sh mermaid-cli.sh'
+        }
+      }
+    }
+    stage('mp4') {
       when {
         beforeAgent true
         anyOf {
@@ -119,21 +134,6 @@ pipeline {
       steps {
         container('marp') {
           sh 'sh marp.sh'
-        }
-      }
-    }
-    stage('Create Mermaid Diagrams') {
-      when {
-        beforeAgent true
-        anyOf {
-          changeset "mermaid-cli.sh"
-          changeset "intro.mmd"
-          triggeredBy cause: 'UserIdCause'
-        }
-      }
-      steps {
-        container('mermaid-cli') {
-          sh 'sh mermaid-cli.sh'
         }
       }
     }
