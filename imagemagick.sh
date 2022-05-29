@@ -1,12 +1,15 @@
 #!/bin/bash
 #
 
-title="Title layout:"
-caption="Solid color option"
-presenter="Robin Mordasiewicz"
-position="Marketing Engineer"
-date=`TZ='America/Toronto' date +"%a %b %d, %Y - %H:%M:%S %Z"`
-BACKGROUNDCOLOR="#0E487A"
+title="Cloud Native"
+caption=""
+presenter=""
+position=""
+#date=`TZ='America/Toronto' date +"%a %b %d, %Y - %H:%M:%S %Z"`
+date=``
+
+#BACKGROUNDCOLOR="#0E487A"
+BACKGROUNDCOLOR="#0E5C8D"
 INTROTITLEFONTCOLOR="#FFFFFF"
 INTROCAPTIONFONTCOLOR="#FFFFFF"
 LOGO=f5-logo-white.png
