@@ -153,13 +153,14 @@ pipeline {
         }
       }
       steps {
+        sh 'git status'
         sh 'git config user.email "robin@mordasiewicz.com"'
         sh 'git config user.name "Robin Mordasiewicz"'
         sh 'git add . && git diff --staged --quiet || git commit -m "New Assets"'
-        sh 'git status'
         withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'git')]) {
           sh 'git push origin HEAD:main'
         }
+        sh 'git status'
       }
     }
   }
