@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-title="BIG-IP NeXT"
+title="BIG-IP - NeXT"
 caption="Carrier Grade NAT"
 presenter="Cloud Native Functions"
 position="Distributed Cloud"
