@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 
-title="BIG-IP NEXT - CGNAT"
-caption="Cloud Native Functions"
-presenter=""
+title="BIG-IP NEXT"
+caption="Carrier Grade NAT"
+presenter="Cloud Native Functions"
 position=""
 #date=`TZ='America/Toronto' date +"%a %b %d, %Y - %H:%M:%S %Z"`
 date=``
