@@ -138,15 +138,6 @@ pipeline {
       }
     }
     stage('Commit New Assets') {
-      when {
-        beforeAgent true
-        allOf {
-          not {changeset "intro.png"}
-          not {changeset "intro.mp4"}
-          not {changeset "intro.pptx"}
-          not {changeset "diagram.png"}
-        }
-      }
       steps {
         sh 'git config user.email "robin@mordasiewicz.com"'
         sh 'git config user.name "Robin Mordasiewicz"'
