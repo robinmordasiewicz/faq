@@ -148,7 +148,7 @@ pipeline {
         beforeAgent true
         expression {
           container('ubuntu') {
-            sh(returnStatus: true, script: 'git diff-index --quiet HEAD --') == 0
+            sh(returnStatus: true, script: 'git status --porcelain') == 0
           }
         }
       }
