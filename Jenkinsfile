@@ -10,6 +10,12 @@ pipeline {
         kind: Pod
         spec:
           containers:
+          - name: ubuntu
+            image: robinhoodis/ubuntu:latest
+            imagePullPolicy: Always
+            command:
+            - cat
+            tty: true
           - name: diagrams
             image: robinhoodis/diagrams:latest
             imagePullPolicy: Always
@@ -147,13 +153,13 @@ pipeline {
         }
       }
       steps {
-//        sh 'git config user.email "robin@mordasiewicz.com"'
-//        sh 'git config user.name "Robin Mordasiewicz"'
-//        sh 'git add . && git diff --staged --quiet || git commit -m "New Assets"'
+        sh 'git config user.email "robin@mordasiewicz.com"'
+        sh 'git config user.name "Robin Mordasiewicz"'
+        sh 'git add . && git diff --staged --quiet || git commit -m "New Assets"'
         sh 'git status'
-//        withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'git')]) {
-//          sh 'git push origin HEAD:main'
-//        }
+        withCredentials([gitUsernamePassword(credentialsId: 'github-pat', gitToolName: 'git')]) {
+          sh 'git push origin HEAD:main'
+        }
       }
     }
   }
