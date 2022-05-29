@@ -103,7 +103,7 @@ pipeline {
         }
       }
     }
-    stage('Video') {
+    stage('Videos') {
       when {
         beforeAgent true
         anyOf {
