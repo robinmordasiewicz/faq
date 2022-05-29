@@ -63,7 +63,6 @@ pipeline {
           changeset "1920x1080-openslide.png"
           changeset "f5-logo-rgb.png"
           changeset "imagemagick.sh"
-          changeset "intro.png"
           triggeredBy cause: 'UserIdCause'
         }
       }
@@ -95,6 +94,8 @@ pipeline {
         anyOf {
           changeset "melt.sh"
           changeset "intro.mlt"
+          changeset "intro.png"
+          changeset "diagram.png"
           triggeredBy cause: 'UserIdCause'
         }
       }
@@ -109,6 +110,8 @@ pipeline {
         beforeAgent true
         anyOf {
           changeset "marp.sh"
+          changeset "intro.png"
+          changeset "diagram.png"
           changeset "intro.md"
           triggeredBy cause: 'UserIdCause'
         }
