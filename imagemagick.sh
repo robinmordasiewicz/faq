@@ -1,24 +1,22 @@
 #!/bin/bash
 #
 
-title="Cloud Native"
-caption=""
+title="CGNAT"
+caption="Cloud Native Functions"
 presenter=""
 position=""
 #date=`TZ='America/Toronto' date +"%a %b %d, %Y - %H:%M:%S %Z"`
 date=``
 
-#BACKGROUNDCOLOR="#0E487A"
-BACKGROUNDCOLOR="#0E5C8D"
+BACKGROUNDCOLOR="#0F487A"
 INTROTITLEFONTCOLOR="#FFFFFF"
 INTROCAPTIONFONTCOLOR="#FFFFFF"
 LOGO=f5-logo-white.png
 BACKGROUND="1920x1080-openslide.png"
-#BACKGROUND="corporate-template.png"
 
 #convert ${BACKGROUND} -verbose -strip -resize 1920x1080 -quality 100 -density 72x72 -units pixelsperinch tmp.png
 
-convert -size 1920x1080 xc:'#05335C' tmp.png
+convert -size 1920x1080 xc:'#0F487A' tmp.png
 convert tmp.png -fill '#F2B819' -stroke '#F2B819' -draw "rectangle 0,1065 1920,1080" yellow.png
 convert yellow.png -fill '#DB0021' -stroke '#DB0021' -draw "rectangle 770,1065 1920,1080" yellow-red.png
 convert yellow-red.png -fill '#EE593B' -stroke '#EE593B' -draw "rectangle 937,1065 1920,1080" yellow-red-orange.png
